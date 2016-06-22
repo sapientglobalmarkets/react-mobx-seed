@@ -77,7 +77,7 @@
     "build": "del dist; webpack --env prod",
     "test": "karma start",
     "test:watch": "npm test -- --no-single-run --auto-watch",
-    "lint": "eslint src",
+    "lint": "eslint src --ext .js,.jsx",
     "gen": "plop"
   },
   "engines": {
