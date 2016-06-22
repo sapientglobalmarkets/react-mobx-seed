@@ -11,7 +11,7 @@ module.exports = merge(webpackCommon, {
         'react/lib/ReactContext': true
     },
 
-    devtool: 'cheap-module-source-map',
+    devtool: 'inline-source-map',
 
 
 });
