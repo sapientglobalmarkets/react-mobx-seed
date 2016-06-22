@@ -1,25 +1,21 @@
+import {observer} from 'mobx-react';
+import {connect} from 'mobx-connect';
+
+@connect
+@observer
 export default class Clock extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            date: new Date()
-        };
-    }
-
     render() {
+        const {store: {date}} = this.context;
         return (
             <div>
                 <span>The time is</span>
-                <h2>{format(this.state.date)}</h2>
+                <h2>{format(date)}</h2>
             </div>
         );
     }
 
     componentWillMount() {
-        this.intervalId = setInterval(()=> {
-            this.setState({date: new Date()});
-        }, 1000);
     }
 
     componentWillUnmount() {
