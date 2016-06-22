@@ -29,3 +29,5 @@ Seed project for React + MobX
 - Plop (`generator`)
 - Sample app
 - HMR
+- PostCSS with CSS Modules
+- Add Bootstrap
