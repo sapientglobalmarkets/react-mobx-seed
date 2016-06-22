@@ -28,3 +28,4 @@ Seed project for React + MobX
 - ESLint
 - Plop (`generator`)
 - Sample app
+- HMR
