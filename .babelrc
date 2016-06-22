@@ -1,8 +1,13 @@
 {
     "presets": [
         "es2015-webpack",
-        "react"
+        "react",
+        "stage-1"
     ],
+    "plugins": [
+        "transform-decorators-legacy"
+    ],
+
     "env": {
         "test": {
             "plugins": [

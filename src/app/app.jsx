@@ -1,5 +1,5 @@
 import {Clock} from './components/clock';
 
-export default (props)=>{
+export default ()=>{
     return <Clock />;
 };
