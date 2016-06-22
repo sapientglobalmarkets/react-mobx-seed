@@ -1,0 +1,70 @@
+{
+    "name": "react-mobx-seed",
+    "version": "1.0.0",
+    "description": "Seed Project for React + MobX",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sapientglobalmarkets/react-mobx-seed.git"
+    },
+    "keywords": [
+        "react",
+        "mobx",
+        "mocha",
+        "chai",
+        "ui",
+        "component",
+        "enzyme",
+        "webpack",
+        "eslint",
+        "sass",
+        "postcss"
+    ],
+    "author": "Pavan Podila <pavan@pixelingene.com> (http://blog.pixelingene.com)",
+    "license": "MIT",
+    "homepage": "https://github.com/sapientglobalmarkets/react-mobx-seed",
+    "devDependencies": {
+        "babel-core": "^6.9.1",
+        "babel-loader": "^6.2.4",
+        "babel-plugin-__coverage__": "^11.0.0",
+        "babel-preset-es2015-webpack": "^6.4.1",
+        "babel-preset-react": "^6.5.0",
+        "chai": "^3.5.0",
+        "copy-webpack-plugin": "^3.0.1",
+        "css-loader": "^0.23.1",
+        "del-cli": "^0.2.0",
+        "enzyme": "^2.3.0",
+        "extract-text-webpack-plugin": "^1.0.1",
+        "html-webpack-plugin": "^2.21.0",
+        "karma": "^0.13.22",
+        "karma-chai": "^0.1.0",
+        "karma-coverage": "^1.0.0",
+        "karma-mocha": "^1.0.1",
+        "karma-mocha-reporter": "^2.0.4",
+        "karma-phantomjs-launcher": "^1.0.0",
+        "karma-webpack": "^1.7.0",
+        "mocha": "^2.5.3",
+        "node-sass": "^3.8.0",
+        "phantomjs-prebuilt": "^2.1.7",
+        "react-addons-test-utils": "^15.1.0",
+        "sass-loader": "^3.2.0",
+        "webpack": "^2.1.0-beta.13",
+        "webpack-dev-server": "^1.14.1",
+        "webpack-merge": "^0.14.0"
+    },
+    "dependencies": {
+        "react": "^15.1.0",
+        "react-dom": "^15.1.0",
+        "lodash": "^4.13.1"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --env dev",
+        "build": "del dist; webpack --env prod",
+        "test": "karma start",
+        "test:watch": "npm test -- --no-single-run --auto-watch"
+    },
+    "engines": {
+        "node": ">=5.0"
+    }
+
+}
