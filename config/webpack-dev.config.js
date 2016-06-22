@@ -11,6 +11,4 @@ module.exports = merge(webpackCommon, {
         stats: 'minimal'
     },
 
-    plugins: [
-    ]
 });

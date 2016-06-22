@@ -3,10 +3,12 @@
 let HtmlPlugin = require('html-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let ProvidePlugin = require('webpack').ProvidePlugin;
+let webpack = require('webpack');
 
 module.exports = {
     entry: {
-        main: './src/main.js'
+        main: './src/main.js',
+        vendor: './src/vendor.js'
     },
     output: {
         filename: '[name].js',
@@ -42,11 +44,16 @@ module.exports = {
     plugins: [
         new HtmlPlugin({
             title: 'React + MobX',
-            template: './src/index.html'
+            template: './src/index.html',
+            inject: true
         }),
         new ExtractTextPlugin('main.css'),
         new ProvidePlugin({
             React: 'react'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            minChunks: 2,
+            name: 'vendor'
         })
     ]
 };
