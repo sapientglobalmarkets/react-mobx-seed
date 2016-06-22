@@ -3,6 +3,9 @@ Seed project for React + MobX
 
 ## Libraries used
 
+#### Language
+- ES2015 and beyond
+
 #### Application Frameworks
 - React
 - SASS
