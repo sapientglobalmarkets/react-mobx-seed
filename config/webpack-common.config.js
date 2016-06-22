@@ -16,7 +16,7 @@ module.exports = {
     module: {
         preLoaders: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(js)$/,
                 loader: 'eslint',
                 exclude: /node_modules/
             }
@@ -24,7 +24,7 @@ module.exports = {
 
         loaders: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(js)$/,
                 loader: 'babel',
                 exclude: /node_modules/
             },
@@ -36,7 +36,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['', '.js', '.jsx', '.scss']
+        extensions: ['', '.js', '.css', '.scss']
     },
 
     plugins: [

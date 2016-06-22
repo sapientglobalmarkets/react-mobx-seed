@@ -26,10 +26,10 @@ Seed project for React + MobX
 - Webpack
 - Webpack Dev Server
 - ESLint
+- Plop (`generator`)
 
 ## TODO
 
-- Plop (`generator`)
 - Sample app
 - HMR
 - PostCSS with CSS Modules
