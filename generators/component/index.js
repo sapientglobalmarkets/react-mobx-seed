@@ -41,7 +41,7 @@ module.exports = {
         // test
         actions.push({
             type: 'add',
-            path: 'src/{{dashCase featureName}}/components/{{dashCase name}}.test.jsx',
+            path: 'src/{{dashCase featureName}}/components/{{dashCase name}}/{{dashCase name}}.test.jsx',
             templateFile: __dirname + '/test.hbs'
         });
 
