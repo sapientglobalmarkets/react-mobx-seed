@@ -1,9 +1,11 @@
 'use strict';
 
+const CopyPlugin = require('copy-webpack-plugin');
 let HtmlPlugin = require('html-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let ProvidePlugin = require('webpack').ProvidePlugin;
 let webpack = require('webpack');
+let path = require('path');
 
 module.exports = {
     entry: {
@@ -12,7 +14,7 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: __dirname + '/dist'
+        path: path.resolve(__dirname, '../dist')
     },
 
     module: {
@@ -34,11 +36,27 @@ module.exports = {
             {
                 test: /\.scss/,
                 loader: ExtractTextPlugin.extract('css!sass')
-            }
+            },
+
+            {
+                test: /\.(jpg|png|svg)$/,
+                loader: 'file',
+                query: {
+                    name: '[name].[hash].[ext]'
+                },
+            },
+            {
+                test: /\.(woff|woff2)$/,
+                loader: 'url',
+                query: {
+                    name: '[name].[hash].[ext]',
+                    limit: 10000,
+                },
+            },
         ],
     },
     resolve: {
-        extensions: ['', '.js', '.jsx', '.css', '.scss']
+        extensions: ['', '.js', '.jsx', '.json']
     },
 
     plugins: [
@@ -48,6 +66,11 @@ module.exports = {
             inject: true
         }),
         new ExtractTextPlugin('main.css'),
+        new CopyPlugin([
+            {
+                from: './src/assets',
+            }
+        ]),
         new ProvidePlugin({
             React: 'react'
         }),

@@ -1,17 +1,28 @@
 'use strict';
 
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const webpackCommon = require('./webpack-common.config');
-const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(webpackCommon, {
     devtool: 'none',
 
     plugins: [
-        new CopyPlugin([
-            {
-                from: './src/assets',
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.AggressiveMergingPlugin(),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                unused: true,
+                dead_code: true,
+                warnings: false,
+                screw_ie8: true
             }
-        ])
+        }),
+        new webpack.NoErrorsPlugin(),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production'),
+            '__DEV__': false
+        }),
     ]
 });

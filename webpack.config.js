@@ -1,3 +1,7 @@
 'use strict';
 
-module.exports = require('./config/webpack-dev.config');
+module.exports = env=> {
+    return env === 'dev'
+        ? require('./config/webpack-dev.config')
+        : require('./config/webpack-prod.config');
+};

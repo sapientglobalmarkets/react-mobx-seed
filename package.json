@@ -74,7 +74,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --env dev",
-    "build": "del dist; webpack --env prod",
+    "build": "del dist; webpack -p --env prod",
     "test": "karma start",
     "test:watch": "npm test -- --no-single-run --auto-watch",
     "lint": "eslint src --ext .js,.jsx",
