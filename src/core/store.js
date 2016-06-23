@@ -20,6 +20,7 @@ class Store {
     }
 
     loadRepos(name) {
+        this.orgName = name;
         this.loading = true;
 
         github.getReposFor(name)
