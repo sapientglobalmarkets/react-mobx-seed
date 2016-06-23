@@ -5,8 +5,7 @@ import { observer } from 'mobx-react';
 export default class RepoViewer extends React.Component {
 
     render() {
-        const { store } = this.props;
-        const { repos, orgName, loading } = store;
+        const { repos, orgName, loading } = this.props.store;
         return (
 
             <div>
@@ -14,7 +13,8 @@ export default class RepoViewer extends React.Component {
 
                 <label>Organization: </label>
                 <input type="text" value={orgName}
-                       onChange={event=>store.loadRepos(event.target.value)}/>
+                       onChange={event=>this.onNameChange(event.target.value)}
+                       onKeyUp={event=>this.onKeyUp(event.keyCode)}/>
 
                 <LoadingIndicator loading={loading}/>
                 <ul>
@@ -29,6 +29,16 @@ export default class RepoViewer extends React.Component {
         );
     }
 
+    onNameChange(text) {
+        this.props.store.setOrgName(text);
+    }
+
+    onKeyUp(keyCode) {
+        // ENTER
+        if (keyCode === 13)  {
+            this.props.store.loadRepos();
+        }
+    }
 }
 
 function LoadingIndicator({ loading }) {

@@ -19,11 +19,14 @@ class Store {
         this.date = new Date();
     }
 
-    loadRepos(name) {
+    setOrgName(name) {
         this.orgName = name;
+    }
+
+    loadRepos() {
         this.loading = true;
 
-        github.getReposFor(name)
+        github.getReposFor(this.orgName)
             .then(repos=>{
                 this.repos = repos;
                 this.loading = false;
