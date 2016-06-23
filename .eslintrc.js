@@ -28,6 +28,8 @@ module.exports = {
     ],
     rules: {
         'react/display-name': 'off',
+        'react/prop-types': 'warn',
+
         indent: [
             'error',
             4,

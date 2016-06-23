@@ -1,6 +1,10 @@
-import {computed, observable} from 'mobx';
+import { computed, observable } from 'mobx';
+import { github } from './github.service';
 
 class Store {
+    @observable orgName = '';
+    @observable loading = false;
+    @observable repos = [];
     @observable date = new Date();
 
     @computed get time() {
@@ -14,6 +18,21 @@ class Store {
     tick() {
         this.date = new Date();
     }
+
+    loadRepos(name) {
+        this.loading = true;
+
+        github.getReposFor(name)
+            .then(repos=>{
+                this.repos = repos;
+                this.loading = false;
+            })
+            .catch(()=>{
+                this.repos = [];
+                this.loading = false;
+            });
+    }
+
 }
 
 const store = new Store();

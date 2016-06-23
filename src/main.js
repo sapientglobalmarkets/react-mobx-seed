@@ -1,16 +1,13 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'mobx-react';
-import {store} from './core/store';
-import {Router, RouterContext, browserHistory} from 'react-router';
-import {routes} from './core/routes';
-
-const context = {
-    store
-};
+import { Provider } from 'mobx-react';
+import { store } from './core/store';
+import { Router, RouterContext, browserHistory } from 'react-router';
+import { routes } from './core/routes';
 
 const createElement = props=> {
     return (
-        <Provider context={context}>
+        <Provider store={store}>
             <RouterContext {...props}/>
         </Provider>
     );
