@@ -2,6 +2,7 @@
 
 const merge = require('webpack-merge');
 const webpackCommon = require('./webpack-common.config');
+const webpack = require('webpack');
 
 module.exports = merge(webpackCommon, {
     devtool: 'cheap-module-source-map',

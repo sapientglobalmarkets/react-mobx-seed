@@ -1,11 +1,11 @@
 'use strict';
 
 const CopyPlugin = require('copy-webpack-plugin');
-let HtmlPlugin = require('html-webpack-plugin');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let ProvidePlugin = require('webpack').ProvidePlugin;
-let webpack = require('webpack');
-let path = require('path');
+const HtmlPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ProvidePlugin = require('webpack').ProvidePlugin;
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
     entry: {

@@ -1,15 +1,25 @@
-import {render} from 'react-dom';
-import {App} from './app';
+import ReactDOM from 'react-dom';
 import {ContextProvider} from './core/context-provider';
 import {store} from './core/store';
+import {Router, RouterContext, browserHistory} from 'react-router';
+import {routes} from './core/routes';
 
 const context = {
     store
 };
 
+const createElement = props=> {
+    return (
+        <ContextProvider context={context}>
+            <RouterContext {...props}/>
+        </ContextProvider>
+    );
+};
+
 const root = (
-    <ContextProvider context={context}>
-        <App/>
-    </ContextProvider>
+    <Router history={browserHistory}
+            render={createElement}
+            routes={routes}/>
 );
-render(root, document.querySelector('main'));
+
+ReactDOM.render(root, document.querySelector('main'));
