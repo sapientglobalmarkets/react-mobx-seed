@@ -71,9 +71,6 @@ module.exports = {
                 from: './src/assets',
             }
         ]),
-        new ProvidePlugin({
-            React: 'react'
-        }),
         new webpack.optimize.CommonsChunkPlugin({
             minChunks: 2,
             name: 'vendor'

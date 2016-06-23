@@ -31,10 +31,18 @@ module.exports = {
     actions: function (data) {
         var actions = [];
 
+        // index
         actions.push({
             type: 'add',
             path: 'src/{{dashCase featureName}}/components/{{dashCase name}}/index.js',
             templateFile: __dirname + '/index.hbs'
+        });
+
+        // test
+        actions.push({
+            type: 'add',
+            path: 'src/{{dashCase featureName}}/components/{{dashCase name}}.test.jsx',
+            templateFile: __dirname + '/test.hbs'
         });
 
         if (data.stateless) {

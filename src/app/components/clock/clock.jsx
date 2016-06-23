@@ -1,3 +1,4 @@
+import React from 'react';
 import {observer} from 'mobx-react';
 import {connect} from 'mobx-connect';
 
@@ -15,4 +16,5 @@ export default class Clock extends React.Component {
         );
     }
 }
+
 
