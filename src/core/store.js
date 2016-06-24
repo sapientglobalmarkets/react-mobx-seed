@@ -4,6 +4,7 @@ import { github } from './github.service';
 class Store {
     @observable orgName = '';
     @observable loading = false;
+    @observable error = false;
     @observable repos = [];
     @observable date = new Date();
 

@@ -1,1 +1,0 @@
-export { default as RepoViewer } from './repo-viewer';
