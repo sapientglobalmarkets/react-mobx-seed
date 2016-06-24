@@ -1,10 +1,9 @@
-import { observable } from 'mobx';
 import {ClockStore} from './clock';
 import {GithubStore} from './github';
 
 class Store {
-    @observable github = new GithubStore();
-    @observable clock = new ClockStore();
+    github = new GithubStore();
+    clock = new ClockStore();
 
     init() {
         this.github.init();
