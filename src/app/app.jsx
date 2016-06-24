@@ -1,5 +1,4 @@
 import React from 'react';
-import { Clock } from './components/clock';
 import {Link} from 'react-router';
 
 export default (props)=> {
@@ -10,10 +9,12 @@ export default (props)=> {
                     <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/repos">Github Repos</Link>
+                    <Link to="/clock">Clock</Link>
+                </li>
+                <li>
+                    <Link to="/github">Github Repos</Link>
                 </li>
             </ul>
-            <Clock />
 
             <hr/>
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import { observer } from 'mobx-react';
+import {observer} from 'mobx-react';
 
 @observer(['store'])
 export default class Clock extends React.Component {
 
     render() {
-        const { store: { time } } = this.props;
+        const {clock: time} = this.props.store;
         return (
             <div>
                 <span>The time is</span>

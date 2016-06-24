@@ -1,11 +1,13 @@
 import React from 'react';
-import { observer } from 'mobx-react';
+import {observer} from 'mobx-react';
 
-@observer([ 'store' ])
+@observer(['store'])
 export default class RepoViewer extends React.Component {
 
     render() {
-        const { repos, orgName, loading } = this.props.store;
+        const {github} = this.props.store;
+        const {repos, orgName, loading} = github;
+
         return (
 
             <div>
@@ -20,7 +22,7 @@ export default class RepoViewer extends React.Component {
                 <ul>
                     {
                         repos.map(r=> {
-                            return (<li>{r.name}</li>);
+                            return (<li key={r.name}>{r.name}</li>);
                         })
                     }
                 </ul>
@@ -30,18 +32,18 @@ export default class RepoViewer extends React.Component {
     }
 
     onNameChange(text) {
-        this.props.store.setOrgName(text);
+        this.props.store.github.setOrgName(text);
     }
 
     onKeyUp(keyCode) {
         // ENTER
-        if (keyCode === 13)  {
-            this.props.store.loadRepos();
+        if (keyCode === 13) {
+            this.props.store.github.loadRepos();
         }
     }
 }
 
-function LoadingIndicator({ loading }) {
+function LoadingIndicator({loading}) {
     return (
         <strong>
             { loading ? 'Loading...' : ''}
