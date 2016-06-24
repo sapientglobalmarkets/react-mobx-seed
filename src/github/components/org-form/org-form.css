@@ -1,0 +1,15 @@
+.orgForm {
+    margin-bottom: 4px;
+}
+
+input {
+    width: 250px;
+}
+
+.showRepos {
+    margin-left: 5px;
+}
+
+.error {
+    color: red;
+}
