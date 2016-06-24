@@ -1,11 +1,15 @@
 import React from 'react';
-
+import {Link} from 'react-router';
+import {observer} from 'mobx-react';
 import s from './toolbar.css';
 
-let Toolbar = () => (
-    <div className={s.toolbar}>
-        <h1 className={s.title}>React Redux Seed</h1>
-    </div>
+let Toolbar = observer(
+    ['store'],
+    ({store: {title}}) => (
+        <div className={s.toolbar}>
+            <Link to="/" className={s.title}>{title}</Link>
+        </div>
+    )
 );
 
 export default Toolbar;

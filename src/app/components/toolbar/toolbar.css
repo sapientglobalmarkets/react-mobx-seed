@@ -13,4 +13,7 @@
     font-weight: normal;
     letter-spacing: 0.1px;
     line-height: 48px;
+
+    color: $app-text-color-reverse;
+    text-decoration: none;
 }

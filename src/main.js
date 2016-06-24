@@ -5,10 +5,7 @@ import { store } from './core/store';
 import { Router, RouterContext, browserHistory } from 'react-router';
 import { routes } from './routes';
 
-// Import the CSS reset, which HtmlWebpackPlugin transfers to the build folder
 import 'sanitize.css/sanitize.css';
-
-// Now override with our styles
 import styles from 'core/styles/styles.css';  // eslint-disable-line no-unused-vars
 
 const createElement = props=> {

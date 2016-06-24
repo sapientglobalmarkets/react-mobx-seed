@@ -27,8 +27,10 @@ module.exports = {
         'plugin:react/recommended'
     ],
     rules: {
+        'no-console': 'off',
         'react/display-name': 'off',
         'react/prop-types': 'off',
+        'comma-dangle': 'off',
 
         indent: [
             'error',

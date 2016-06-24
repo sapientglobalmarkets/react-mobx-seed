@@ -1,13 +1,13 @@
 import React from 'react';
-import { observer } from 'mobx-react';
+import {observer} from 'mobx-react';
 
-@observer([ 'store' ])
+@observer(['store'])
 export default class RepoList extends React.Component {
 
     render() {
-        const { repos } = this.props.store;
+        const {github: {repos}} = this.props.store;
         return (
-            <table  className="mintable">
+            <table className="mintable">
                 <thead>
                 <tr>
                     <th>Repository</th>

@@ -14,7 +14,11 @@ const postcssFocus = require('postcss-focus');
 const postcssReporter = require('postcss-reporter');
 
 // Load the CSS in a style tag in development
-let cssLoaders = 'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader?parser=postcss-scss';
+let cssLoaders = [
+    'style-loader',
+    'css-loader?' + ['localIdentName=[local]__[path][name]__[hash:base64:5]', 'modules&importLoaders=1', 'sourceMap'].join('&'),
+    'postcss-loader?parser=postcss-scss'
+].join('!');
 
 module.exports = {
     entry: {

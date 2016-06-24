@@ -1,5 +1,6 @@
 import {App} from './app';
-import {Clock} from './clock';
+import {ClockPage} from './clock';
+import {GithubPage} from './github';
 
 export let routes = {
     path: '/',
@@ -7,7 +8,11 @@ export let routes = {
     childRoutes: [
         {
             path: '/clock',
-            component: Clock
-        }
+            component: ClockPage
+        },
+        {
+            path: '/github',
+            component: GithubPage
+        },
     ]
 };
