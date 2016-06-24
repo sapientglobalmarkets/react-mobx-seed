@@ -13,4 +13,5 @@ class Store {
 }
 
 const store = new Store();
+store.init();
 export {store};

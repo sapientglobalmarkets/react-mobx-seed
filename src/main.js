@@ -19,6 +19,4 @@ const root = (
             routes={routes}/>
 );
 
-// bootstrap
-store.init();
 ReactDOM.render(root, document.querySelector('main'));

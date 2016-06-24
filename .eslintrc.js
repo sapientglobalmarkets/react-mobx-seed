@@ -27,6 +27,7 @@ module.exports = {
         'plugin:react/recommended'
     ],
     rules: {
+        'no-console': 'off',
         'react/display-name': 'off',
         'react/prop-types': 'off',
 

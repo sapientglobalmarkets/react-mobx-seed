@@ -7,11 +7,11 @@ export let routes = {
     component: App,
     childRoutes: [
         {
-            path: '/clock',
+            path: 'clock',
             component: Clock
         },
         {
-            path: '/github',
+            path: 'github',
             component: RepoViewer
         }
     ]

@@ -5,8 +5,7 @@ import {observer} from 'mobx-react';
 export default class RepoViewer extends React.Component {
 
     render() {
-        const {github} = this.props.store;
-        const {repos, orgName, loading} = github;
+        const {github: {repos, orgName, loading}} = this.props.store;
 
         return (
 

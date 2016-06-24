@@ -1,4 +1,4 @@
-import {observable} from 'mobx';
+import {action, observable} from 'mobx';
 import {github} from './github.service';
 
 export class GithubStore {
@@ -9,10 +9,12 @@ export class GithubStore {
     init() {
     }
 
+    @action
     setOrgName(name) {
         this.orgName = name;
     }
 
+    @action
     loadRepos() {
         this.loading = true;
 
