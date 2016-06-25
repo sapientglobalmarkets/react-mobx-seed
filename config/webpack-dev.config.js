@@ -16,5 +16,9 @@ module.exports = merge(webpackCommon, {
         new webpack.DefinePlugin({
             '__DEV__': true
         }),
+        new webpack.optimize.CommonsChunkPlugin({
+            minChunks: 2,
+            name: 'vendor'
+        })
     ]
 });

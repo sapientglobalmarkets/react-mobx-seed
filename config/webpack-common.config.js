@@ -101,10 +101,6 @@ module.exports = {
             {
                 from: './src/assets',
             }
-        ]),
-        new webpack.optimize.CommonsChunkPlugin({
-            minChunks: 2,
-            name: 'vendor'
-        })
+        ])
     ]
 };

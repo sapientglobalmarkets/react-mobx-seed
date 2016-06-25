@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Toolbar } from './toolbar';
+import { AppBar } from './app-bar';
 import { Navbar } from './navbar';
 
 export default (props) => (
     <div>
-        <Toolbar />
+        <AppBar />
         <Navbar />
         {props.children}
     </div>

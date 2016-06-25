@@ -24,5 +24,9 @@ module.exports = merge(webpackCommon, {
             'process.env.NODE_ENV': JSON.stringify('production'),
             '__DEV__': false
         }),
+        new webpack.optimize.CommonsChunkPlugin({
+            minChunks: 2,
+            name: 'vendor'
+        })
     ]
 });

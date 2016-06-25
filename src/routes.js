@@ -8,8 +8,14 @@ export let routes = {
     indexRoute: {component: GithubPage},
     childRoutes: [
         {
-            path: '/clock',
+            path: 'clock',
             component: ClockPage
+        },
+
+        // Catch-all route
+        {
+            path: '*',
+            onEnter: ({ params }, replace) => replace('/')
         },
     ]
 };

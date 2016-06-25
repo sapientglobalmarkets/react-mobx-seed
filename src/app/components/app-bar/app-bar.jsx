@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {observer} from 'mobx-react';
-import s from './toolbar.css';
+import s from './app-bar.css';
 
-let Toolbar = observer(
+let AppBar = observer(
     ['store'],
     ({store: {title}}) => (
         <div className={s.toolbar}>
@@ -12,4 +12,4 @@ let Toolbar = observer(
     )
 );
 
-export default Toolbar;
+export default AppBar;
