@@ -1,39 +1,26 @@
-const plop = require('plop');
 const util = require('../util');
 
 module.exports = {
-    description: 'Generate a React Component',
+    description: 'Generate a Feature-level, React Component',
     prompts: [
         {
             type: 'input',
             name: 'name',
-            message: 'What is your Component\'s name?',
+            message: 'What is your Feature\'s name?',
             validate: function (value) {
                 if ((/.+/).test(value)) {
-                    return true;
+                    return util.featureExists(value) ? 'This feature already exists' : true;
                 }
+
                 return 'name is required';
             },
-            default: 'MyComponent'
+            default: 'MyFeature'
         },
         {
             type: 'confirm',
             name: 'stateless',
             message: 'Make it a Stateless Functional Component?',
             default: true
-        },
-        {
-            type: 'input',
-            name: 'featureName',
-            message: 'Which feature does it belong to?',
-            validate: function (value) {
-                if ((/.+/).test(value)) {
-                    return util.componentExists(plop.inquirer.answers.name, value) ? 'This feature/component already exists' : true;
-                }
-
-                return 'featureName is required';
-            },
-            default: 'core'
         },
     ],
     actions: function (data) {
