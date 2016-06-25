@@ -6,7 +6,7 @@ import { Router, RouterContext, browserHistory } from 'react-router';
 import { routes } from './routes';
 
 import 'sanitize.css/sanitize.css';
-import styles from 'core/styles/styles.css';  // eslint-disable-line no-unused-vars
+import 'core/styles/styles.css';
 
 const createElement = props=> {
     return (

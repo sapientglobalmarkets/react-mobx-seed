@@ -6,9 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
-// Load the CSS in a style tag in development
-let cssLoaders = [
-    'style-loader',
+const cssLoader = [
     'css-loader?' + ['localIdentName=[local]__[hash:base64:4]', 'modules', 'importLoaders=1', 'sourceMap'].join('&'),
     'postcss-loader'
 ].join('!');
@@ -43,7 +41,7 @@ module.exports = {
                 // Transform our own .css files using PostCSS and CSS-modules
                 test: /\.css$/,
                 exclude: /node_modules/,
-                loader: cssLoaders
+                loader: ExtractTextPlugin.extract('style-loader', cssLoader)
             },
 
             {
@@ -54,7 +52,7 @@ module.exports = {
                 // So, no need for ExtractTextPlugin here.
                 test: /\.css$/,
                 include: /node_modules/,
-                loaders: ['style-loader', 'css-loader']
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
             },
 
             {
@@ -96,7 +94,9 @@ module.exports = {
             template: './src/index.html',
             inject: true
         }),
-        new ExtractTextPlugin('main.css'),
+        new ExtractTextPlugin('main.css', {
+            allChunks: true
+        }),
         new CopyPlugin([
             {
                 from: './src/assets',
