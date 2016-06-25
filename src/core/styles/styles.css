@@ -1,9 +1,9 @@
 /* Global styles */
-@import './colors';
+@import './colors.css';
 
 /* Box-sizing border-box */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 }
 
 input {
-    border: 1px solid $color-brand;
+    border: 1px solid var(--color-brand);
     font-size: 13px;
     height: 40px;
     outline: none;
@@ -25,9 +25,9 @@ input {
 }
 
 button {
-    background-color: $color-brand;
+    background-color: var(--color-brand);
     border-style: none;
-    color: $app-text-color-reverse;
+    color: var(--app-text-color-reverse);
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -37,10 +37,11 @@ button {
 }
 
 button:hover {
-    background-color: $color-hover;
+    background-color: var(--color-hover);
 }
 
 :global {
+
     .pull-right {
         text-align: right;
     }
@@ -76,4 +77,5 @@ button:hover {
     .mintable tfoot td {
         background-color: #dcefff;
     }
+
 }

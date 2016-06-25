@@ -5,14 +5,11 @@ import {GithubPage} from './github';
 export let routes = {
     path: '/',
     component: App,
+    indexRoute: {component: GithubPage},
     childRoutes: [
         {
             path: '/clock',
             component: ClockPage
-        },
-        {
-            path: '/github',
-            component: GithubPage
         },
     ]
 };

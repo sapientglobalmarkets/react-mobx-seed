@@ -1,8 +1,8 @@
-@import '../../../core/styles/colors';
+@import '../../../core/styles/colors.css';
 
 .toolbar {
-    background-color: $color-brand;
-    color: $app-text-color-reverse;
+    background-color: var(--color-brand);
+    color: var(--app-text-color-reverse);
     height: 48px;
     padding: 0 16px;
 }
@@ -14,6 +14,6 @@
     letter-spacing: 0.1px;
     line-height: 48px;
 
-    color: $app-text-color-reverse;
+    color: var(--app-text-color-reverse);
     text-decoration: none;
 }

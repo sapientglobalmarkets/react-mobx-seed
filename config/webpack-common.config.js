@@ -3,21 +3,14 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const ProvidePlugin = require('webpack').ProvidePlugin;
 const webpack = require('webpack');
 const path = require('path');
-
-// PostCSS plugins
-const precss = require('precss');
-const cssnext = require('postcss-cssnext');
-const postcssFocus = require('postcss-focus');
-const postcssReporter = require('postcss-reporter');
 
 // Load the CSS in a style tag in development
 let cssLoaders = [
     'style-loader',
-    'css-loader?' + ['localIdentName=[local]__[path][name]__[hash:base64:5]', 'modules&importLoaders=1', 'sourceMap'].join('&'),
-    'postcss-loader?parser=postcss-scss'
+    'css-loader?' + ['localIdentName=[local]__[hash:base64:4]', 'modules', 'importLoaders=1', 'sourceMap'].join('&'),
+    'postcss-loader'
 ].join('!');
 
 module.exports = {
@@ -88,12 +81,11 @@ module.exports = {
 
     // Process the CSS with PostCSS
     postcss: () => [
-        precss(),
-        postcssFocus(), // Add a :focus to every :hover
-        cssnext({ // Allow future CSS features to be used, also auto-prefixes the CSS...
-            browsers: ['last 2 versions', 'IE > 10'] // ...based on this browser list
+        require('precss'),
+        require('postcss-cssnext')({
+            browsers: ['last 2 versions', 'ie > 10']
         }),
-        postcssReporter({ // Posts messages from plugins to the terminal
+        require('postcss-reporter')({ // Posts messages from plugins to the terminal
             clearMessages: true
         })
     ],

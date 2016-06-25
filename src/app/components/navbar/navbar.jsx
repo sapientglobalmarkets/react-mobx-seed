@@ -1,11 +1,11 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {IndexLink, Link} from 'react-router';
 
 import s from './navbar.css';
 
 let Navbar = () => (
     <nav>
-        <Link to="/github" activeClassName={s.active}>GITHUB</Link>
+        <IndexLink to="/" activeClassName={s.active}>HOME</IndexLink>
         <Link to="/clock" activeClassName={s.active}>CLOCK</Link>
     </nav>
 );

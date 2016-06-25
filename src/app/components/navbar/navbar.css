@@ -1,23 +1,23 @@
-@import '../../../core/styles/colors';
+@import '../../../core/styles/colors.css';
 
 nav {
-  border-color: $app-border-color;
-  border-style: solid;
-  border-width: 0 0 1px;
-  height: 48px;
-  padding: 0 16px;
+    border-color: var(--app-border-color);
+    border-style: solid;
+    border-width: 0 0 1px;
+    height: 48px;
+    padding: 0 16px;
 }
 
 nav a {
-  color: $app-link-text-color;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 48px;
-  margin-right: 20px;
-  text-decoration: none;
-  vertical-align: middle;
+    color: var(--app-link-text-color);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 48px;
+    margin-right: 20px;
+    text-decoration: none;
+    vertical-align: middle;
 }
 
 nav .active {
-  color: $color-brand;
+    color: var(--color-brand);
 }
