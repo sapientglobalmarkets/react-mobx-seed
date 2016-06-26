@@ -1,14 +1,18 @@
 # react-mobx-seed
 Seed project for React + MobX
 
+
+[![Dependency Status](https://david-dm.org/sapientglobalmarkets/react-mobx-seed.svg)](https://david-dm.org/sapientglobalmarkets/react-mobx-seed)
+
 ## Libraries used
 
 #### Language
-- ES2015 and beyond
+- ES2015 + stage-0
 
 #### Application Frameworks
+
 - React
-- SASS
+- PostCSS (cssnext + precss + css-modules)
 
 #### State Management
 
@@ -30,7 +34,4 @@ Seed project for React + MobX
 
 ## TODO
 
-- Sample app
 - HMR
-- PostCSS with CSS Modules
-- Add Bootstrap

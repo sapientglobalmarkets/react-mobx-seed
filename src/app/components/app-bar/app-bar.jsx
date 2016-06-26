@@ -8,6 +8,7 @@ let AppBar = observer(
     ({store: {title}}) => (
         <div className={s.toolbar}>
             <Link to="/" className={s.title}>{title}</Link>
+            <a className={s.githubLink} href="https://github.com/sapientglobalmarkets/react-mobx-seed" />
         </div>
     )
 );

@@ -96,6 +96,7 @@ module.exports = {
         new CopyPlugin([
             {
                 from: './src/assets',
+                to: 'assets'
             }
         ])
     ]
