@@ -83,7 +83,7 @@
     "test": "karma start",
     "test:watch": "npm test -- --no-single-run --auto-watch",
     "lint": "eslint src --ext .js,.jsx",
-    "gen": "plop"
+    "gen": "plop --plopfile generators/plopfile.js"
   },
   "engines": {
     "node": ">=5.0"

@@ -28,22 +28,22 @@ module.exports = {
             // index
             {
                 type: 'add',
-                path: 'src/{{dashCase featureName}}/components/{{dashCase name}}/index.js',
-                templateFile: __dirname + '/index.hbs'
+                path: '../src/{{dashCase name}}/index.js',
+                templateFile: './component/index.hbs'
             },
 
             // test
             {
                 type: 'add',
-                path: 'src/{{dashCase featureName}}/components/{{dashCase name}}/{{dashCase name}}.test.jsx',
-                templateFile: __dirname + '/test.hbs'
+                path: '../src/{{dashCase name}}/{{dashCase name}}.test.jsx',
+                templateFile: './component/test.hbs'
             },
 
             // css
             {
                 type: 'add',
-                path: 'src/{{dashCase featureName}}/components/{{dashCase name}}/{{dashCase name}}.css',
-                templateFile: __dirname + '/css.hbs'
+                path: '../src/{{dashCase name}}/{{dashCase name}}.css',
+                templateFile: './component/css.hbs'
             }
 
         ];
@@ -51,14 +51,14 @@ module.exports = {
         if (data.stateless) {
             actions.push({
                 type: 'add',
-                path: 'src/{{dashCase featureName}}/components/{{dashCase name}}/{{dashCase name}}.jsx',
-                templateFile: __dirname + '/function.hbs'
+                path: '../src/{{dashCase name}}/{{dashCase name}}.jsx',
+                templateFile: './component/function.hbs'
             });
         } else {
             actions.push({
                 type: 'add',
-                path: 'src/{{dashCase featureName}}/components/{{dashCase name}}/{{dashCase name}}.jsx',
-                templateFile: __dirname + '/class.hbs'
+                path: '../src/{{dashCase name}}/{{dashCase name}}.jsx',
+                templateFile: './component/class.hbs'
             });
         }
 

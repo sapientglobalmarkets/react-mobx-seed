@@ -13,12 +13,20 @@ module.exports = {
 };
 
 function componentExists(componentName, featureName) {
-    const fullPath = path.resolve(process.cwd(), `src/${featureName}/${componentName}`);
-    return !!fs.statSync(fullPath);
+    try {
+        const fullPath = path.resolve(process.cwd(), `src/${featureName}/${componentName}`);
+        return !!fs.statSync(fullPath);
+    } catch (e) {
+        return false;
+    }
 }
 
 function featureExists(featureName) {
-    const fullPath = path.resolve(process.cwd(), `src/${featureName}`);
-    return !!fs.statSync(fullPath);
+    try {
+        const fullPath = path.resolve(process.cwd(), `src/${featureName}`);
+        return !!fs.statSync(fullPath);
+    } catch (e) {
+        return false;
+    }
 }
 
