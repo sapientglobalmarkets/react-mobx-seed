@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
-import { store } from './core/store';
+import { store } from './store';
 import { Router, RouterContext, browserHistory } from 'react-router';
 import { routes } from './routes';
 

@@ -1,10 +1,10 @@
-import {App} from './app';
+import {Shell} from './shell';
 import {ClockPage} from './clock';
 import {GithubPage} from './github';
 
 export let routes = {
     path: '/',
-    component: App,
+    component: Shell,
     indexRoute: {component: GithubPage},
     childRoutes: [
         {

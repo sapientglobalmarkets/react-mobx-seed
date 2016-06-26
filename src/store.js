@@ -1,5 +1,5 @@
-import {ClockStore} from './clock';
-import {GithubStore} from './github';
+import {ClockStore} from './clock/clock.store';
+import {GithubStore} from './github/github.store';
 
 class Store {
     title = 'React MobX Seed';
