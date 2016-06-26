@@ -1,8 +1,8 @@
 import React from 'react';
 
 import s from './github-page.css';
-import { OrgForm } from './org-form';
-import { RepoList } from './repo-list';
+import { OrgForm } from './components/org-form';
+import { RepoList } from './components/repo-list';
 
 let GithubPage = () => (
     <div className={s.githubPage}>
