@@ -44,6 +44,13 @@ module.exports = {
                 type: 'add',
                 path: '../src/{{dashCase name}}/{{dashCase name}}.css',
                 templateFile: './component/css.hbs'
+            },
+
+            // store
+            {
+                type: 'add',
+                path: '../src/{{dashCase name}}/{{dashCase name}}.store.js',
+                templateFile: './feature/store.hbs'
             }
 
         ];

@@ -1,0 +1,13 @@
+import {computed, observable} from 'mobx';
+
+export class {{properCase name}}Store {
+    @observable date = new Date();
+
+    @computed get time() {
+        return this.date.toString();
+    }
+
+    init() {
+        // prepare the store
+    }
+}
