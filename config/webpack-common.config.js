@@ -88,16 +88,11 @@ module.exports = {
         new HtmlPlugin({
             title: 'React + MobX',
             template: './src/index.html',
+            favicon: './src/assets/favicon.ico',
             inject: true
         }),
         new ExtractTextPlugin('main.css', {
             allChunks: true
         }),
-        new CopyPlugin([
-            {
-                from: './src/assets',
-                to: 'assets'
-            }
-        ])
     ]
 };
