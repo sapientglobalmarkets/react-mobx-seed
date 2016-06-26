@@ -32,24 +32,10 @@ module.exports = {
         'react/prop-types': 'off',
         'comma-dangle': 'off',
 
-        indent: [
-            'error',
-            4,
-            {
-                SwitchCase: 1
-            }
-        ],
-        'linebreak-style': [
-            'error',
-            'unix'
-        ],
-        quotes: [
-            'error',
-            'single'
-        ],
-        semi: [
-            'error',
-            'always'
-        ]
+        'eol-last': 'error',
+        indent: ['error', 4, {SwitchCase: 1}],
+        'linebreak-style': ['error', 'unix'],
+        quotes: ['error', 'single'],
+        semi: ['error', 'always']
     }
 };
