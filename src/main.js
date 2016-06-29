@@ -6,6 +6,7 @@ import { Router, RouterContext, browserHistory } from 'react-router';
 import { routes } from './routes';
 
 import 'bootstrap/dist/css/bootstrap.css';
+import './core/styles/styles.css';
 
 const createElement = props=> {
     return (
