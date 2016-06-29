@@ -5,8 +5,7 @@ import { store } from './store';
 import { Router, RouterContext, browserHistory } from 'react-router';
 import { routes } from './routes';
 
-import 'sanitize.css/sanitize.css';
-import 'core/styles/styles.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const createElement = props=> {
     return (

@@ -43,6 +43,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.21.0",
+    "inquirer-directory": "^2.0.0",
     "json-loader": "^0.5.4",
     "karma": "^1.1.0",
     "karma-chai": "^0.1.0",
@@ -69,6 +70,8 @@
     "webpack-merge": "^0.14.0"
   },
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "lodash": "^4.13.1",
     "mobx": "^2.3.2",
     "mobx-react": "^3.3.1",
     "react": "^15.1.0",
