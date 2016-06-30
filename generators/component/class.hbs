@@ -5,6 +5,18 @@ import './{{dashCase name}}.css';
 @observer(['store'])
 export default class {{ properCase name }} extends React.Component {
 
+    static get defaultProps() {
+        return {
+            type: '',
+        };
+    }
+
+    static get propTypes() {
+        return {
+            type: React.PropTypes.string,
+        };
+    }
+
     render() {
         return (
             <h2>{{ properCase name }}</h2>
