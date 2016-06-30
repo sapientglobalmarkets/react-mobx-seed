@@ -11,7 +11,7 @@ export default class RepoList extends React.Component {
                 <thead>
                 <tr>
                     <th>Repository</th>
-                    <th className="pull-right">Stars</th>
+                    <th className="pull-right">* Stars *</th>
                     <th className="pull-right">Forks</th>
                 </tr>
                 </thead>
