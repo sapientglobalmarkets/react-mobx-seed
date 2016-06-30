@@ -1,1 +1,1 @@
-export {default as ClockPage} from './clock-page';
+export {default as ClockPage} from './components/clock-page';
