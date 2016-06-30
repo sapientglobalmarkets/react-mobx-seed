@@ -88,7 +88,7 @@ module.exports = {
         new HtmlPlugin({
             title: 'React + MobX',
             template: './src/index.html',
-            favicon: './src/assets/favicon.ico',
+            favicon: './src/assets/images/favicon.ico',
             inject: true
         }),
         new ExtractTextPlugin('main.css', {

@@ -70,8 +70,6 @@
     "webpack-merge": "^0.14.0"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.2",
-    "lodash": "^4.13.1",
     "mobx": "^2.3.2",
     "mobx-react": "^3.3.1",
     "react": "^15.1.0",
