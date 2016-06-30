@@ -1,6 +1,6 @@
 import React from 'react';
 import {observer} from 'mobx-react';
-import './{{dashCase name}}.css';
+import style from './{{dashCase name}}.css';
 
 @observer(['store'])
 export default class {{ properCase name }} extends React.Component {
@@ -19,7 +19,9 @@ export default class {{ properCase name }} extends React.Component {
 
     render() {
         return (
-            <h2>{{ properCase name }}</h2>
+            <div className={style.root}>
+                <h2>{{ properCase name }}</h2>
+            </div>
         );
     }
 

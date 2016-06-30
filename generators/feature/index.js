@@ -25,46 +25,42 @@ module.exports = {
     ],
     actions: function (data) {
         var actions = [
-            // index
             {
                 type: 'add',
                 path: '../src/{{dashCase name}}/index.js',
-                templateFile: './component/index.hbs'
+                templateFile: './feature/index.hbs'
             },
 
-            // test
-            {
-                type: 'add',
-                path: '../src/{{dashCase name}}/{{dashCase name}}.test.jsx',
-                templateFile: './component/test.hbs'
-            },
-
-            // css
-            {
-                type: 'add',
-                path: '../src/{{dashCase name}}/{{dashCase name}}.css',
-                templateFile: './component/css.hbs'
-            },
-
-            // store
             {
                 type: 'add',
                 path: '../src/{{dashCase name}}/{{dashCase name}}.store.js',
                 templateFile: './feature/store.hbs'
             }
+            ,
 
+            {
+                type: 'add',
+                path: '../src/{{dashCase name}}/components/{{dashCase name}}.test.jsx',
+                templateFile: './component/test.hbs'
+            },
+
+            {
+                type: 'add',
+                path: '../src/{{dashCase name}}/components/{{dashCase name}}.css',
+                templateFile: './component/css.hbs'
+            }
         ];
 
         if (data.stateless) {
             actions.push({
                 type: 'add',
-                path: '../src/{{dashCase name}}/{{dashCase name}}.jsx',
+                path: '../src/{{dashCase name}}/components/{{dashCase name}}.jsx',
                 templateFile: './component/function.hbs'
             });
         } else {
             actions.push({
                 type: 'add',
-                path: '../src/{{dashCase name}}/{{dashCase name}}.jsx',
+                path: '../src/{{dashCase name}}/components/{{dashCase name}}.jsx',
                 templateFile: './component/class.hbs'
             });
         }
