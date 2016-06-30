@@ -17,7 +17,7 @@ module.exports = function (config) {
             [testFileGlob]: ['webpack', 'sourcemap'],
         },
         webpack: require('./config/webpack-test.config'),
-        webpackMiddleware: {noInfo: true},
+        webpackMiddleware: {stats: 'minimal'},
 
 
         reporters: ['mocha', 'coverage'],
