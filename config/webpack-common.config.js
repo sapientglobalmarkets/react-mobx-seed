@@ -26,7 +26,7 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 loader: 'eslint',
-                exclude: /node_modules/
+                include: path.join(__dirname, '../src')
             }
         ],
 
@@ -34,13 +34,13 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 loader: 'babel',
-                exclude: /node_modules/
+                include: path.join(__dirname, '../src')
             },
 
             {
                 // Transform our own .css files using PostCSS and CSS-modules
                 test: /\.css$/,
-                exclude: /node_modules/,
+                include: path.join(__dirname, '../src'),
                 loader: ExtractTextPlugin.extract('style-loader', cssLoader)
             },
 
@@ -54,6 +54,7 @@ module.exports = {
             {
                 test: /\.(jpg|png|svg)$/,
                 loader: 'file',
+                include: path.join(__dirname, '../src'),
                 query: {
                     name: '[name].[hash].[ext]'
                 },
@@ -61,6 +62,7 @@ module.exports = {
             {
                 test: /\.(woff|woff2)$/,
                 loader: 'url',
+                include: path.join(__dirname, '../src'),
                 query: {
                     name: '[name].[hash].[ext]',
                     limit: 10000,

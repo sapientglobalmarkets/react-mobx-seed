@@ -1,25 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'mobx-react';
-import { store } from './store';
-import { Router, RouterContext, browserHistory } from 'react-router';
-import { routes } from './routes';
+import {Provider} from 'mobx-react';
+import {store} from './store';
+import {Router, browserHistory} from 'react-router';
 
 import 'sanitize.css/sanitize.css';
 import './assets/styles/styles.css';
 
-const createElement = props=> {
-    return (
+render();
+
+function render() {
+    const routes = require('./routes').routes;
+
+    const root = (
         <Provider store={store}>
-            <RouterContext {...props}/>
+            <Router history={browserHistory}>
+                {routes}
+            </Router>
         </Provider>
     );
-};
 
-const root = (
-    <Router history={browserHistory}
-            render={createElement}
-            routes={routes}/>
-);
+    ReactDOM.render(root, document.querySelector('main'));
 
-ReactDOM.render(root, document.querySelector('main'));
+}
