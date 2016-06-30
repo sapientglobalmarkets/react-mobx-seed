@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { AppBar } from './components/app-bar';
-import { Navbar } from './components/navbar';
+import { AppBar } from './app-bar';
+import { Navbar } from './navbar';
 
 export default (props) => (
     <div>

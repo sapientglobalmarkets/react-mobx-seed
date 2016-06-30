@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
-import {ClockPage} from './index';
+import ClockPage from './clock-page';
 
 describe('<Clock>', ()=> {
 
