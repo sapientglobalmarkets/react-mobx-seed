@@ -60,11 +60,11 @@ module.exports = {
                 },
             },
             {
-                test: /\.(woff|woff2)$/,
+                test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'url',
                 query: {
                     name: '[name].[hash].[ext]',
-                    limit: 10000,
+                    limit: 25000,
                 },
             },
         ],
