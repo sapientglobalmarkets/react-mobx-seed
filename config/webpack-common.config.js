@@ -55,7 +55,6 @@ module.exports = {
             {
                 test: /\.(jpg|png|svg)$/,
                 loader: 'file',
-                include: SRC_PATH,
                 query: {
                     name: '[name].[hash].[ext]'
                 },
@@ -63,7 +62,6 @@ module.exports = {
             {
                 test: /\.(woff|woff2)$/,
                 loader: 'url',
-                include: SRC_PATH,
                 query: {
                     name: '[name].[hash].[ext]',
                     limit: 10000,

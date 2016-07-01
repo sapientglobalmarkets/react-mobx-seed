@@ -42,7 +42,7 @@ button:hover {
 
 :global {
 
-    .pull-right {
+    .text-right {
         text-align: right;
     }
 
