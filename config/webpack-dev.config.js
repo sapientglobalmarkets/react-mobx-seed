@@ -3,13 +3,13 @@
 const merge = require('webpack-merge');
 const webpackCommon = require('./webpack-common.config');
 const webpack = require('webpack');
-const path = require('path');
 
 module.exports = merge(webpackCommon, {
     entry: {
         main: [
+            'react-hot-loader/patch',
             'webpack-dev-server/client?http://localhost:8080',
-            'webpack/hot/dev-server',
+            'webpack/hot/only-dev-server',
             './src/main.js'
         ]
     },

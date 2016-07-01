@@ -1,25 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'mobx-react';
 import {store} from './store';
-import {Router, browserHistory} from 'react-router';
+import {browserHistory} from 'react-router';
+import {App} from './app';
 
 import 'sanitize.css/sanitize.css';
 import './assets/styles/styles.css';
 
-render();
+const render = ((rootElement)=> {
 
-function render() {
-    const routes = require('./routes').routes;
+    return (appRoot)=> {
+        ReactDOM.render(appRoot, rootElement);
+    };
 
-    const root = (
-        <Provider store={store}>
-            <Router history={browserHistory}>
-                {routes}
-            </Router>
-        </Provider>
+})(document.querySelector('main'));
+
+if (__DEV__ && module.hot) {
+    const AppContainer = require('react-hot-loader').AppContainer;
+
+    render(
+        <AppContainer>
+            <App store={store} history={browserHistory}/>
+        </AppContainer>
     );
 
-    ReactDOM.render(root, document.querySelector('main'));
+    module.hot.accept('./app', ()=> {
+        const NextApp = require('./app/index');
 
+        render(
+            <AppContainer>
+                <NextApp store={store} history={browserHistory}/>
+            </AppContainer>
+        );
+    });
+} else {
+    render(
+        <App store={store} history={browserHistory}/>
+    );
 }
+
