@@ -47,7 +47,9 @@ And you are off to the races!
 - Webpack Dev Server
 - ESLint
 - Plop (`generator`)
+- React-Hot-Reload
 
 ## TODO
 
-- HMR
+- Documentation
+- More variety in Tests (interaction, ajax, logic)
