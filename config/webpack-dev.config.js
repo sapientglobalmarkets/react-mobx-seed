@@ -3,7 +3,7 @@
 const merge = require('webpack-merge');
 const webpackCommon = require('./webpack-common.config');
 const webpack = require('webpack');
-const seedConfig = require('../package.json').seedConfig || require('./seed-config.defaults');
+const seedConfig = Object.assign({}, require('./seed-config.defaults'), require('../package.json').seedConfig);
 
 module.exports = merge(webpackCommon, {
     entry: {
