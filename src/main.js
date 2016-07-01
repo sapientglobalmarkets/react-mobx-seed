@@ -25,11 +25,9 @@ if (__DEV__ && module.hot) {
     );
 
     module.hot.accept('./app', ()=> {
-        const NextApp = require('./app/index');
-
         render(
             <AppContainer>
-                <NextApp store={store} history={browserHistory}/>
+                <App store={store} history={browserHistory}/>
             </AppContainer>
         );
     });
