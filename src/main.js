@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {store} from './store';
 import {browserHistory} from 'react-router';
+import {store} from './store';
 import {App} from './app';
 
 import 'sanitize.css/sanitize.css';
@@ -36,4 +36,3 @@ if (__DEV__ && module.hot) {
         <App store={store} history={browserHistory}/>
     );
 }
-

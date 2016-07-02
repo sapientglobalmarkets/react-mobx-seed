@@ -1,15 +1,14 @@
 import React from 'react';
-import {observer} from 'mobx-react';
-import {routes} from '../../routes';
 import {Router} from 'react-router';
-import {Provider} from 'mobx-react';
+import {observer, Provider} from 'mobx-react';
+import {routes} from '../../routes';
 
 export default observer(['store'], function App({store, history}) {
 
     return (
         <Provider store={store}>
             <Router history={history}>
-                    {routes}
+                {routes}
             </Router>
         </Provider>
     );
