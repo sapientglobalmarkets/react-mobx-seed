@@ -23,7 +23,7 @@ And you are off to the races!
 ## Libraries used
 
 #### Language
-- ES2015 + stage-0
+- ES2015 + stage-1
 
 #### Application Frameworks
 
