@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import { App } from './';
 import {Provider} from 'mobx-react';
+import App from './app';
 
 describe('<App />', ()=> {
     beforeEach(()=> {
