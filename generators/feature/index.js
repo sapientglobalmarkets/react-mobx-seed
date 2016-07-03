@@ -1,7 +1,7 @@
 const util = require('../util');
 
 module.exports = {
-    description: 'Generate a Feature-level, React Component',
+    description: 'Generate a feature',
     prompts: [
         {
             type: 'input',
@@ -17,14 +17,18 @@ module.exports = {
             default: 'MyFeature'
         },
         {
-            type: 'confirm',
-            name: 'stateless',
-            message: 'Make it a Stateless Functional Component?',
-            default: true
+            type: 'list',
+            name: 'type',
+            message: 'What type of Component do you want?',
+            choices: [
+                { name: 'Stateless Functional', value: 'function' },
+                { name: 'Component Class', value: 'class' },
+            ],
+            default: 'class'
         },
     ],
     actions: function (data) {
-        var actions = [
+        const actions = [
             {
                 type: 'add',
                 path: '../src/{{dashCase name}}/index.js',
@@ -35,8 +39,7 @@ module.exports = {
                 type: 'add',
                 path: '../src/{{dashCase name}}/{{dashCase name}}.store.js',
                 templateFile: './feature/store.hbs'
-            }
-            ,
+            },
 
             {
                 type: 'add',
@@ -51,7 +54,7 @@ module.exports = {
             }
         ];
 
-        if (data.stateless) {
+        if (data.type === 'function') {
             actions.push({
                 type: 'add',
                 path: '../src/{{dashCase name}}/components/{{dashCase name}}.jsx',
