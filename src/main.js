@@ -4,7 +4,7 @@ import {browserHistory} from 'react-router';
 import {store} from './store';
 import {App} from './app';
 
-import 'sanitize.css/sanitize.css';
+// Styles
 import './assets/styles/styles.css';
 
 const render = ((rootElement)=> {

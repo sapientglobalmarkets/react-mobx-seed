@@ -76,7 +76,7 @@ module.exports = {
 
     // Process the CSS with PostCSS
     postcss: () => [
-        require('precss'),
+        require('post'),
         require('postcss-cssnext')({
             browsers: ['last 2 versions', 'ie > 10']
         }),
