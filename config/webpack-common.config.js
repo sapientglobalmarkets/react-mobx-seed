@@ -95,5 +95,6 @@ module.exports = {
         new ExtractTextPlugin('main.css', {
             allChunks: true
         }),
+
     ]
 };

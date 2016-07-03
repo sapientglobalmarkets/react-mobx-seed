@@ -1,11 +1,10 @@
 process.env.BABEL_ENV = 'test'; // Set the proper environment for babel
 const testFileGlob = 'src/**/*.test.@(js|jsx)';
 
-
 module.exports = function (config) {
     config.set({
         basePath: '',
-        frameworks: ['mocha', 'chai'],
+        frameworks: ['mocha', 'chai', 'sinon'],
 
         files: [
             testFileGlob
@@ -25,7 +24,7 @@ module.exports = function (config) {
             dir: 'coverage',
             reporters: [
                 {type: 'html', subdir: 'html'},
-                {type: 'text-summary'},
+                {type: 'text-summary'}
             ],
             includeAllSources: true,
             instrumenterOptions: {

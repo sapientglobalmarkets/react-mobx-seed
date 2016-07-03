@@ -13,12 +13,13 @@ export default class OrgForm extends React.Component {
         return (
             <div>
                 <form className={s.orgForm}>
-                    <input
-                        placeholder="Organization Name (e.g. facebook)"
-                        value={orgName}
-                        onChange={event=>github.setOrgName(event.target.value)}
+                    <input data-element="input"
+                           placeholder="Organization Name (e.g. facebook)"
+                           value={orgName}
+                           onChange={event=>github.setOrgName(event.target.value)}
                     />
                     <button className={s.showRepos}
+                            data-action="loadRepos"
                             onClick={(event)=>this.onShowRepos(event)}>Show Repos
                     </button>
                 </form>

@@ -8,7 +8,8 @@ module.exports = {
     globals: {
         React: true,
         expect: true,
-        __DEV__: true
+        __DEV__: true,
+        sinon: true,
     },
     parser: 'babel-eslint',
     parserOptions: {

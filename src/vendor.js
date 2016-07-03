@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+
 // React
 import 'react';
 import 'react-dom';
