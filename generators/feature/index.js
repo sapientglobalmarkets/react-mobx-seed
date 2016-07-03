@@ -21,7 +21,7 @@ module.exports = {
             name: 'type',
             message: 'What type of Component do you want?',
             choices: [
-                { name: 'Stateless Functional', value: 'function' },
+                { name: 'Stateless Function', value: 'function' },
                 { name: 'Component Class', value: 'class' },
             ],
             default: 'class'
