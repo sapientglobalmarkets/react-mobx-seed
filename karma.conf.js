@@ -6,7 +6,7 @@ module.exports = function (config) {
         frameworks: ['mocha', 'chai', 'sinon'],
 
         files: [
-            'src/test.index.js'
+            'src/test.index.js',
         ],
         exclude: [],
 
@@ -15,7 +15,7 @@ module.exports = function (config) {
             'src/test.index.js': ['webpack', 'sourcemap'],
         },
         webpack: require('./config/webpack-test.config'),
-        webpackMiddleware: {stats: 'minimal'},
+        webpackMiddleware: {stats: 'none'},
 
 
         reporters: ['mocha', 'coverage'],

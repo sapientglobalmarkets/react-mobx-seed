@@ -1,3 +1,3 @@
-const testsContext = require.context('.', true, /\.test\.(js|jsx)$/);
-testsContext.keys().forEach(testsContext);
+const filesContext = require.context('.', true, /\.test\.(js|jsx)$/);
+filesContext.keys().forEach(filesContext);
 
