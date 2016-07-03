@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {observer} from 'mobx-react';
-import s from './app-bar.css';
+import s from './appbar.css';
 
-let AppBar = observer(
+let Appbar = observer(
     ['store'],
     ({store: {title}}) => (
-        <div className={s.toolbar}>
+        <div className={s.appbar}>
             <Link to="/" className={s.title}>{title}</Link>
             <a className={s.githubLink}
                href="https://github.com/sapientglobalmarkets/react-mobx-seed"/>
@@ -14,4 +14,4 @@ let AppBar = observer(
     )
 );
 
-export default AppBar;
+export default Appbar;

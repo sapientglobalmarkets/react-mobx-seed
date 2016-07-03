@@ -1,6 +1,6 @@
 @import '../../../assets/styles/colors.css';
 
-.toolbar {
+.appbar {
     background-color: var(--color-brand);
     color: var(--app-text-color-reverse);
     height: 48px;
