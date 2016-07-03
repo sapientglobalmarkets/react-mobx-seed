@@ -1,11 +1,9 @@
-import request from '../core/utils/request';
-
-const ORGS_URL = 'https://api.github.com/orgs';
+import {config, request} from '../core';
 
 class GithubService {
 
     getReposFor(orgName) {
-        return request(`${ORGS_URL}/${orgName}/repos?per_page=100`);
+        return request(`${config.ORGS_URL}/${orgName}/repos?per_page=100`);
     }
 }
 
