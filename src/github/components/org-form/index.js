@@ -1,1 +1,1 @@
-export { default as OrgForm } from './org-form';
+export {default as OrgForm} from './org-form';

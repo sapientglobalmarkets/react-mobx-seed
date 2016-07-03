@@ -20,13 +20,15 @@ export default class OrgForm extends React.Component {
                     />
                     <button className={s.showRepos}
                             data-action="loadRepos"
-                            onClick={(event)=>this.onShowRepos(event)}>Show Repos
+                            onClick={(event)=>this.onShowRepos(event)}>Show
+                        Repos
                     </button>
                 </form>
 
                 <div>
                     {(loading) ? (<span>Loading...</span>) : null}
-                    {(!loading && error) ? (<span className={s.error}>{error.message}</span>) : null}
+                    {(!loading && error) ? (<span
+                        className={s.error}>{error.message}</span>) : null}
                 </div>
             </div>
         );

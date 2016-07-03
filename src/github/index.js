@@ -1,1 +1,1 @@
-export { default as GithubPage } from './components/github-page';
+export {default as GithubPage} from './components/github-page';

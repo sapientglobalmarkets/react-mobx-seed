@@ -8,7 +8,7 @@ export default observer(['store'], function App({store, history}) {
     return (
         <Provider store={store}>
             <Router history={history}>
-                {routes}
+                    {routes}
             </Router>
         </Provider>
     );

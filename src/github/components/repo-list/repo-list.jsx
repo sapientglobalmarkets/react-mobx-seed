@@ -28,7 +28,8 @@ export default class RepoList extends React.Component {
                 </tbody>
                 <tfoot>
                 <tr>
-                    <td colSpan="3"><em>{repos.length} repositories retrieved</em></td>
+                    <td colSpan="3"><em>{repos.length} repositories
+                        retrieved</em></td>
                 </tr>
                 </tfoot>
             </table>

@@ -6,7 +6,7 @@ import ClockPage from './clock-page';
 describe('<Clock>', () => {
 
     beforeEach(() => {
-        this.store = { clock: {date: new Date()}};
+        this.store = {clock: {date: new Date()}};
     });
 
     it('should render correctly', () => {
