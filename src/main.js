@@ -5,6 +5,7 @@ import {store} from './store';
 import {App} from './app';
 
 // Styles
+import 'sanitize.css/sanitize.css';
 import './assets/styles/styles.css';
 
 const render = ((rootElement)=> {
