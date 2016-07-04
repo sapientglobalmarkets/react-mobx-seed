@@ -4,7 +4,7 @@ import {IndexLink, Link} from 'react-router';
 import s from './navbar.css';
 
 export default () => (
-    <nav>
+    <nav className={s.navbar}>
         <IndexLink to="/" activeClassName={s.active}>HOME</IndexLink>
         <Link to="/clock" activeClassName={s.active}>CLOCK</Link>
     </nav>
