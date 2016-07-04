@@ -75,7 +75,7 @@ module.exports = {
     },
 
     // Process the CSS with PostCSS
-    postcss: (webpack) => [
+    postcss: () => [
         require('precss')(),
         require('postcss-cssnext')({
             browsers: ['last 2 versions', 'ie > 10']
@@ -94,7 +94,6 @@ module.exports = {
         }),
         new ExtractTextPlugin('main.css', {
             allChunks: true
-        }),
-
+        })
     ]
 };
