@@ -1,5 +1,6 @@
 const plop = require('plop');
 const util = require('../util');
+const file = require('../util/file');
 
 module.exports = {
     description: 'Generate a React Component under a feature directory',
@@ -21,10 +22,16 @@ module.exports = {
             name: 'type',
             message: 'What type of Component do you want?',
             choices: [
-                { name: 'Stateless Function', value: 'function'},
-                { name: 'Component Class', value: 'class'},
+                {name: 'Stateless Function', value: 'function'},
+                {name: 'Component Class', value: 'class'},
             ],
             default: 'function'
+        },
+        {
+            type: 'confirm',
+            name: 'container',
+            message: 'Make it a Container component?',
+            default: false
         },
         {
             type: 'folder',
@@ -44,41 +51,19 @@ module.exports = {
     actions: function (data) {
 
         const actions = [
-            // index
-            {
-                type: 'add',
-                path: '../src/{{folder}}/{{dashCase name}}/index.js',
-                templateFile: './component/index.hbs'
-            },
-
-            // test
-            {
-                type: 'add',
-                path: '../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.test.jsx',
-                templateFile: './component/test.hbs'
-            },
-
-            // css
-            {
-                type: 'add',
-                path: '../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.css',
-                templateFile: './component/css.hbs'
-            }
-
+            file.addIndex('../src/{{folder}}/{{dashCase name}}/index.js'),
+            file.addTest('../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.test.jsx'),
+            file.addCss('../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.css'),
         ];
 
         if (data.type === 'function') {
-            actions.push({
-                type: 'add',
-                path: '../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.jsx',
-                templateFile: './component/function.hbs'
-            });
+            actions.push(
+                file.addFunction('../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.jsx')
+            );
         } else {
-            actions.push({
-                type: 'add',
-                path: '../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.jsx',
-                templateFile: './component/class.hbs'
-            });
+            actions.push(
+                file.addClass('../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.jsx')
+            );
         }
 
         return actions;

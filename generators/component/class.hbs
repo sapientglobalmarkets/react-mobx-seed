@@ -1,8 +1,12 @@
 import React from 'react';
-import {observer} from 'mobx-react';
 import style from './{{dashCase name}}.css';
+{{#if container}}
+import {observer} from 'mobx-react';
+{{/if}}
 
+{{#if container}}
 @observer(['store'])
+{{/if}}
 export default class {{ properCase name }} extends React.Component {
 
     static get defaultProps() {

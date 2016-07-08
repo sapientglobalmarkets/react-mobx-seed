@@ -1,13 +1,24 @@
 import React from 'react';
-import {observer} from 'mobx-react';
 import style from './{{dashCase name}}.css';
 
-export default observer(['store'], function {{ properCase name }}(props) {
+{{#if container}}
+import {observer} from 'mobx-react';
 
+export default observer(['store'], function {{ properCase name }}(props) {
     return (
         <div className={ style.{{camelCase name}} }>
             <h2>{{ properCase name }}</h2>
         </div>
     );
-
 });
+
+{{else}}
+export default function {{ properCase name }}(props) {
+    return (
+        <div className={ style.{{camelCase name}} }>
+            <h2>{{ properCase name }}</h2>
+        </div>
+    );
+};
+
+{{/if}}

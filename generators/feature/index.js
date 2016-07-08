@@ -1,4 +1,5 @@
 const util = require('../util');
+const file = require('../util/file');
 
 module.exports = {
     description: 'Generate a feature',
@@ -21,51 +22,30 @@ module.exports = {
             name: 'type',
             message: 'What type of Component do you want?',
             choices: [
-                { name: 'Stateless Function', value: 'function' },
-                { name: 'Component Class', value: 'class' },
+                {name: 'Stateless Function', value: 'function'},
+                {name: 'Component Class', value: 'class'},
             ],
             default: 'class'
         },
     ],
     actions: function (data) {
+        data.container = true;
+
         const actions = [
-            {
-                type: 'add',
-                path: '../src/{{dashCase name}}/index.js',
-                templateFile: './feature/index.hbs'
-            },
-
-            {
-                type: 'add',
-                path: '../src/{{dashCase name}}/{{dashCase name}}.store.js',
-                templateFile: './feature/store.hbs'
-            },
-
-            {
-                type: 'add',
-                path: '../src/{{dashCase name}}/components/{{dashCase name}}.test.jsx',
-                templateFile: './component/test.hbs'
-            },
-
-            {
-                type: 'add',
-                path: '../src/{{dashCase name}}/components/{{dashCase name}}.css',
-                templateFile: './component/css.hbs'
-            }
+            file.addFeatureIndex('../src/{{dashCase name}}/index.js'),
+            file.addStore('../src/{{dashCase name}}/{{dashCase name}}.store.js'),
+            file.addTest('../src/{{dashCase name}}/components/{{dashCase name}}.test.jsx'),
+            file.addCss('../src/{{dashCase name}}/components/{{dashCase name}}.css'),
         ];
 
         if (data.type === 'function') {
-            actions.push({
-                type: 'add',
-                path: '../src/{{dashCase name}}/components/{{dashCase name}}.jsx',
-                templateFile: './component/function.hbs'
-            });
+            actions.push(
+                file.addFunction('../src/{{dashCase name}}/components/{{dashCase name}}.jsx')
+            );
         } else {
-            actions.push({
-                type: 'add',
-                path: '../src/{{dashCase name}}/components/{{dashCase name}}.jsx',
-                templateFile: './component/class.hbs'
-            });
+            actions.push(
+                file.addClass('../src/{{dashCase name}}/components/{{dashCase name}}.jsx')
+            );
         }
 
         return actions;
