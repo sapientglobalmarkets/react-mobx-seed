@@ -4,14 +4,16 @@ import {Provider} from 'mobx-react';
 import App from './app';
 
 describe('<App />', ()=> {
+    let store;
+
     beforeEach(()=> {
-        this.store = {};
+        store = {};
     });
 
 
     it('should render correctly', ()=> {
         const dom = shallow(
-            <Provider store={this.store}>
+            <Provider store={store}>
                 <App />
             </Provider>
         );

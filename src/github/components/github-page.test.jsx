@@ -5,14 +5,16 @@ import {Provider} from 'mobx-react';
 
 describe('<GithubPage>', ()=> {
 
+    let store;
+
     describe('with a default store', ()=> {
         beforeEach(()=> {
-            this.store = {github: {orgName: '', repos: []}};
+            store = {github: {orgName: '', repos: []}};
         });
 
         it('should render correctly', ()=> {
             const dom = shallow(
-                <Provider store={this.store}>
+                <Provider store={store}>
                     <GithubPage/>
                 </Provider>
             );
@@ -21,7 +23,7 @@ describe('<GithubPage>', ()=> {
 
         it('should contain the necessary elements', ()=> {
             const dom = mount(
-                <Provider store={this.store}>
+                <Provider store={store}>
                     <GithubPage/>
                 </Provider>
             );

@@ -5,13 +5,15 @@ import ClockPage from './clock-page';
 
 describe('<Clock>', () => {
 
+    let store;
+
     beforeEach(() => {
-        this.store = {clock: {date: new Date()}};
+        store = {clock: {date: new Date()}};
     });
 
     it('should render correctly', () => {
         const dom = shallow(
-            <Provider store={this.store}>
+            <Provider store={store}>
                 <ClockPage/>
             </Provider>
         );
@@ -20,7 +22,7 @@ describe('<Clock>', () => {
 
     it('should render the time in <h2>', () => {
         const dom = mount(
-            <Provider store={this.store}>
+            <Provider store={store}>
                 <ClockPage/>
             </Provider>
         );
