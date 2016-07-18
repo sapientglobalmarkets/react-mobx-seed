@@ -10,7 +10,6 @@ Create your own project on Github or elsewhere. Then add a git-remote pointing t
 ```shell
 > git remote add mobx-seed https://github.com/sapientglobalmarkets/react-mobx-seed.git
 > git pull mobx-seed master
-> git merge mobx-seed/master
 ```
 
 At this point you should have all the seed files. Now you can run:
