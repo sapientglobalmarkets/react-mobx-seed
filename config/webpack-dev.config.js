@@ -8,8 +8,6 @@ const seedConfig = Object.assign({}, require('./seed-config.defaults'), require(
 module.exports = merge(webpackCommon, {
     entry: {
         main: [
-            'react-hot-loader/patch',
-            `webpack-dev-server/client?http://localhost:${seedConfig.port}`,
             'webpack/hot/only-dev-server',
             './src/main.js'
         ]

@@ -70,8 +70,11 @@ module.exports = {
         ],
     },
     resolve: {
-        modules: ['src', 'node_modules'],
-        extensions: ['', '.js', '.jsx', '.json']
+        extensions: ['', '.js', '.jsx', '.json'],
+        modulesDirectories: [
+            'node_modules',
+            'assets'
+        ]
     },
 
     // Process the CSS with PostCSS

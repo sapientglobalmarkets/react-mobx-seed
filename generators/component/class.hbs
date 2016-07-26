@@ -1,26 +1,23 @@
 import React from 'react';
 {{#if container}}
-import {observer} from 'mobx-react';
+import {observer, inject} from 'mobx-react';
 {{/if}}
 
 import style from './{{dashCase name}}.css';
 
 {{#if container}}
-@observer(['store'])
+@inject('store')
+@observer
 {{/if}}
 export default class {{ properCase name }} extends React.Component {
 
-    static get defaultProps() {
-        return {
-            type: '',
-        };
-    }
+    static defaultProps = {
+        type: '',
+    };
 
-    static get propTypes() {
-        return {
-            type: React.PropTypes.string,
-        };
-    }
+    static propTypes = {
+        type: React.PropTypes.string,
+    };
 
     render() {
         return (
