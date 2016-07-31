@@ -36,6 +36,7 @@ module.exports = {
         'eol-last': 'error',
         indent: ['error', 4, {SwitchCase: 1}],
         'linebreak-style': ['error', 'unix'],
+        'no-trailing-spaces': 'error',
         quotes: ['error', 'single'],
         semi: ['error', 'always']
     }
