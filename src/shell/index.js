@@ -1,1 +1,1 @@
-export {default as Shell} from './components/shell';
+export Shell from './components/shell';

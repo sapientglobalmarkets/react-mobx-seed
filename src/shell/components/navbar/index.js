@@ -1,1 +1,1 @@
-export {default as Navbar} from './navbar';
+export Navbar from './navbar';

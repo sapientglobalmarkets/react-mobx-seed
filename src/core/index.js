@@ -1,2 +1,2 @@
-export {default as config} from './config/config';
-export {default as request} from './utils/request';
+export config from './config/config';
+export request from './utils/request';
