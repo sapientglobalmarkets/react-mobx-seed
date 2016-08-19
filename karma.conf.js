@@ -1,5 +1,7 @@
 process.env.BABEL_ENV = 'test'; // Set the proper environment for babel
 
+const webpackConfig = require('./config/webpack-test.config');
+
 module.exports = function (config) {
     config.set({
         basePath: '',
@@ -14,8 +16,8 @@ module.exports = function (config) {
         preprocessors: {
             'src/test.index.js': ['webpack', 'sourcemap'],
         },
-        webpack: require('./config/webpack-test.config'),
-        webpackMiddleware: {stats: 'none'},
+        webpack: webpackConfig,
+        webpackMiddleware: {stats: 'minimal'},
 
 
         reporters: ['mocha', 'coverage'],
