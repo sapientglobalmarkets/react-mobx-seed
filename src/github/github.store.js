@@ -16,21 +16,21 @@ export class GithubStore {
         this.orgName = name;
     }
 
+    // Following is an example of using async-await
     @action
-    loadRepos() {
+    async loadRepos() {
         this.loading = true;
 
-        github.getReposFor(this.orgName)
-            .then(repos=> {
-                this.repos = repos;
-                this.loading = false;
-                this.error = null;
-            })
-            .catch(error=> {
-                this.repos = [];
-                this.loading = false;
-                this.error = error;
-            });
+        try {
+            this.repos = await github.getReposFor(this.orgName);
+            this.loading = false;
+            this.error = null;
+
+        } catch (error) {
+            this.repos = [];
+            this.loading = false;
+            this.error = error;
+        }
     }
 
 }
