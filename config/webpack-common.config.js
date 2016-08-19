@@ -14,7 +14,7 @@ const cssLoader = [
 
 module.exports = {
     entry: {
-        main: './src/main.js',
+        main: './src/main.jsx',
         vendor: './src/vendor.js'
     },
     output: {
@@ -32,12 +32,6 @@ module.exports = {
         ],
 
         loaders: [
-            {
-                test: /\.(js|jsx)$/,
-                loader: 'babel',
-                include: SRC_PATH
-            },
-
             {
                 // Transform our own .css files using PostCSS and CSS-modules
                 test: /\.css$/,
@@ -70,11 +64,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['', '.js', '.jsx', '.json'],
-        modulesDirectories: [
-            'node_modules',
-            'assets'
-        ]
+        extensions: ['', '.js', '.jsx', '.json']
     },
 
     // Process the CSS with PostCSS

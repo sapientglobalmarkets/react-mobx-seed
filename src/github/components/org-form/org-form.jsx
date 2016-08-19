@@ -21,8 +21,8 @@ export default class OrgForm extends React.Component {
                     />
                     <button className={`sdbutton ${s.showRepos}`}
                             data-action="loadRepos"
-                            onClick={(event)=>this.onShowRepos(event)}>Show
-                        Repos
+                            onClick={(event)=>this.onShowRepos(event)}>
+                        Show Repos
                     </button>
                 </form>
 
