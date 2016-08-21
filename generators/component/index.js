@@ -1,4 +1,3 @@
-const plop = require('plop');
 const util = require('../util');
 const file = require('../util/file');
 
