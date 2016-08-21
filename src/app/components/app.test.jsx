@@ -3,15 +3,15 @@ import {shallow} from 'enzyme';
 import {Provider} from 'mobx-react';
 import App from './app';
 
-describe('<App />', ()=> {
+describe('<App />', () => {
     let store;
 
-    beforeEach(()=> {
+    beforeEach(() => {
         store = {};
     });
 
 
-    it('should render correctly', ()=> {
+    it('should render correctly', () => {
         const dom = shallow(
             <Provider store={store}>
                 <App />

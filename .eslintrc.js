@@ -28,16 +28,33 @@ module.exports = {
         'plugin:react/recommended'
     ],
     rules: {
-        'no-console': 'off',
-        'react/display-name': 'off',
-        'react/prop-types': 'off',
+        'arrow-spacing': 'error',
+        'block-spacing': 'error',
         'comma-dangle': 'off',
-
+        'comma-spacing': 'error',
+        'comma-style': 'error',
+        'curly': 'error',
+        'dot-notation': 'error',
+        'eqeqeq': 'error',
         'eol-last': 'error',
-        indent: ['error', 4, {SwitchCase: 1}],
+        'indent': ['error', 4, {SwitchCase: 1}],
+        'key-spacing': 'error',
+        'keyword-spacing': 'error',
         'linebreak-style': ['error', 'unix'],
+        'no-console': 'off',
+        'no-param-reassign': 'error',
+        'no-tabs': 'error',
         'no-trailing-spaces': 'error',
-        quotes: ['error', 'single'],
-        semi: ['error', 'always']
+        'no-underscore-dangle': 'error',
+        'no-whitespace-before-property': 'error',
+        'quotes': ['error', 'single'],
+        'semi': ['error', 'always'],
+        'semi-spacing': 'error',
+        'space-before-blocks': 'error',
+        'space-before-function-paren': ['error', 'never'],
+        'space-in-parens': 'error',
+
+        'react/display-name': 'off',
+        'react/prop-types': 'off'
     }
 };

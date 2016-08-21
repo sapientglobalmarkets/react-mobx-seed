@@ -9,7 +9,7 @@ export class ClockStore {
     }
 
     init() {
-        this.intervalId = setInterval(()=> this.tick(), 1000);
+        this.intervalId = setInterval(() => this.tick(), 1000);
     }
 
     tick() {

@@ -3,16 +3,16 @@ import {shallow, mount} from 'enzyme';
 import GithubPage from './github-page';
 import {Provider} from 'mobx-react';
 
-describe('<GithubPage>', ()=> {
+describe('<GithubPage>', () => {
 
     let store;
 
-    describe('with a default store', ()=> {
-        beforeEach(()=> {
+    describe('with a default store', () => {
+        beforeEach(() => {
             store = {github: {orgName: '', repos: []}};
         });
 
-        it('should render correctly', ()=> {
+        it('should render correctly', () => {
             const dom = shallow(
                 <Provider store={store}>
                     <GithubPage/>
@@ -21,7 +21,7 @@ describe('<GithubPage>', ()=> {
             expect(dom).to.have.length(1);
         });
 
-        it('should contain the necessary elements', ()=> {
+        it('should contain the necessary elements', () => {
             const dom = mount(
                 <Provider store={store}>
                     <GithubPage/>
@@ -34,10 +34,10 @@ describe('<GithubPage>', ()=> {
 
     });
 
-    describe('when <input> is given', ()=> {
+    describe('when <input> is given', () => {
         let store, dom, spy;
 
-        beforeEach(()=> {
+        beforeEach(() => {
             store = require('../../store').store;
 
             dom = mount(
@@ -47,12 +47,12 @@ describe('<GithubPage>', ()=> {
             );
         });
 
-        afterEach(()=> {
+        afterEach(() => {
             spy.restore();
         });
 
         // Use of Spies to also invoke original behavior
-        it('should change "orgName" when <input> value is changed', ()=> {
+        it('should change "orgName" when <input> value is changed', () => {
 
             spy = sinon.spy(store.github, 'setOrgName');
 
@@ -68,7 +68,7 @@ describe('<GithubPage>', ()=> {
         });
 
         // Use of stubs to avoid invoking original function/behavior
-        it('should call "loadRepos()" when the loadRepos <button> is clicked', ()=> {
+        it('should call "loadRepos()" when the loadRepos <button> is clicked', () => {
             spy = sinon.stub(store.github, 'loadRepos');
 
             dom.find('[data-element="input"]')
