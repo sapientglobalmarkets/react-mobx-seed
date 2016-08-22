@@ -1,46 +1,30 @@
 import React from 'react';
-import {observer} from 'mobx-react';
 
-import s from './org-form.css';
+import style from './org-form.css';
 
-@observer(['store'])
-export default class OrgForm extends React.Component {
+export default function OrgForm({orgName, loading, error, onChangeOrgName, onSubmitForm}) {
+    return (
+        <div>
+            <form className={style.orgForm} onSubmit={onSubmitForm}>
+                <input
+                    className={`sdinput ${style.orgName}`}
+                    data-element="orgInput"
+                    placeholder="Organization Name (e.g. facebook)"
+                    value={orgName}
+                    onChange={onChangeOrgName}
+                />
+                <button
+                    className={`sdbutton ${style.showRepos}`}
+                    data-action="loadRepos"
+                    type="submit">
+                    Show Repos
+                </button>
+            </form>
 
-    render() {
-        const {github} = this.props.store;
-        const {orgName, loading, error} = github;
-
-        return (
             <div>
-                <form className={s.orgForm}>
-                    <input className={`sdinput ${s.orgName}`}
-                           data-element="input"
-                           placeholder="Organization Name (e.g. facebook)"
-                           value={orgName}
-                           onChange={event => github.setOrgName(event.target.value)}
-                    />
-                    <button className={`sdbutton ${s.showRepos}`}
-                            data-action="loadRepos"
-                            onClick={(event) => this.onShowRepos(event)}>
-                        Show Repos
-                    </button>
-                </form>
-
-                <div>
-                    {(loading) ? (<span>Loading...</span>) : null}
-                    {(!loading && error) ? (<span
-                        className={s.error}>{error.message}</span>) : null}
-                </div>
+                {(loading) ? (<span>Loading...</span>) : null}
+                {(!loading && error) ? (<span className={style.error}>{error.message}</span>) : null}
             </div>
-        );
-    }
-
-    onShowRepos(event) {
-        event.stopPropagation();
-        event.preventDefault();
-
-        const {github} = this.props.store;
-        github.loadRepos();
-    }
+        </div>
+    );
 }
-

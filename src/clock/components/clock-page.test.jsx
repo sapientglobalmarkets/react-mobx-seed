@@ -3,7 +3,7 @@ import {shallow, mount} from 'enzyme';
 import {Provider} from 'mobx-react';
 import ClockPage from './clock-page';
 
-describe('<Clock>', () => {
+describe('<ClockPage>', () => {
 
     let store;
 

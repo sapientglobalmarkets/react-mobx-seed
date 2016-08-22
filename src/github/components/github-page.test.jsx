@@ -9,7 +9,14 @@ describe('<GithubPage>', () => {
 
     describe('with a default store', () => {
         beforeEach(() => {
-            store = {github: {orgName: '', repos: []}};
+            store = {
+                github: {
+                    orgName: '',
+                    loading: false,
+                    repos: [],
+                    error: null
+                }
+            };
         });
 
         it('should render correctly', () => {
