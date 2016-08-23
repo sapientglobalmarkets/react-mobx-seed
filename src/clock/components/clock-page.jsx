@@ -3,7 +3,7 @@ import {observer} from 'mobx-react';
 import s from './clock-page.css';
 
 @observer(['store'])
-export default class Clock extends React.Component {
+export default class ClockPage extends React.Component {
 
     render() {
         const {clock: {time}} = this.props.store;
