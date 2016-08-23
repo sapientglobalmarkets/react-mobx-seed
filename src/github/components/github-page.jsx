@@ -12,7 +12,7 @@ export default class GithubPage extends React.Component {
     constructor(props) {
         super(props);
         this.onChangeOrgName = this.onChangeOrgName.bind(this);
-        this.onSubmitOrgForm = this.onSubmitOrgForm.bind(this);
+        this.onShowRepos = this.onShowRepos.bind(this);
     }
 
     render() {
@@ -26,7 +26,7 @@ export default class GithubPage extends React.Component {
                     loading={loading}
                     error={error}
                     onChangeOrgName={this.onChangeOrgName}
-                    onSubmitForm={this.onSubmitOrgForm}
+                    onShowRepos={this.onShowRepos}
                 />
                 <RepoList
                     repos={repos}
@@ -40,7 +40,7 @@ export default class GithubPage extends React.Component {
         github.setOrgName(event.target.value);
     }
 
-    onSubmitOrgForm(event) {
+    onShowRepos(event) {
         event.stopPropagation();
         event.preventDefault();
 

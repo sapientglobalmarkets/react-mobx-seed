@@ -34,15 +34,16 @@ describe('<GithubPage>', () => {
                     <GithubPage/>
                 </Provider>
             );
+
             expect(dom.find('[data-action="loadRepos"]')).to.have.length(1);
-            expect(dom.find('[data-element="input"]')).to.have.length(1);
+            expect(dom.find('[data-element="orgInput"]')).to.have.length(1);
 
         });
 
     });
 
     describe('when <input> is given', () => {
-        let store, dom, spy;
+        let store, dom, spy, stub;
 
         beforeEach(() => {
             store = require('../../store').store;
@@ -63,7 +64,7 @@ describe('<GithubPage>', () => {
 
             spy = sinon.spy(store.github, 'setOrgName');
 
-            dom.find('[data-element="input"]')
+            dom.find('[data-element="orgInput"]')
                 .simulate('change', {
                     target: {
                         value: 'sapientglobalmarkets'
@@ -76,9 +77,9 @@ describe('<GithubPage>', () => {
 
         // Use of stubs to avoid invoking original function/behavior
         it('should call "loadRepos()" when the loadRepos <button> is clicked', () => {
-            spy = sinon.stub(store.github, 'loadRepos');
+            stub = sinon.stub(store.github, 'loadRepos');
 
-            dom.find('[data-element="input"]')
+            dom.find('[data-element="orgInput"]')
                 .simulate('change', {
                     target: {
                         value: 'sapientglobalmarkets'
@@ -88,10 +89,9 @@ describe('<GithubPage>', () => {
             dom.find('[data-action="loadRepos"]')
                 .simulate('click');
 
-            expect(spy.called).to.equal(true);
+            expect(stub.called).to.equal(true);
         });
 
     });
-
 
 });

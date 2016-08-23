@@ -2,10 +2,10 @@ import React from 'react';
 
 import style from './org-form.css';
 
-export default function OrgForm({orgName, loading, error, onChangeOrgName, onSubmitForm}) {
+export default function OrgForm({orgName, loading, error, onChangeOrgName, onShowRepos}) {
     return (
         <div>
-            <form className={style.orgForm} onSubmit={onSubmitForm}>
+            <form className={style.orgForm}>
                 <input
                     className={`sdinput ${style.orgName}`}
                     data-element="orgInput"
@@ -16,7 +16,7 @@ export default function OrgForm({orgName, loading, error, onChangeOrgName, onSub
                 <button
                     className={`sdbutton ${style.showRepos}`}
                     data-action="loadRepos"
-                    type="submit">
+                    onClick={onShowRepos}>
                     Show Repos
                 </button>
             </form>
