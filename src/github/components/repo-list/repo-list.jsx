@@ -1,4 +1,5 @@
 import React from 'react';
+import {propTypes} from 'mobx-react';
 
 export default function RepoList({repos}) {
     return (
@@ -32,6 +33,6 @@ export default function RepoList({repos}) {
 }
 
 RepoList.propTypes = {
-    repos: React.PropTypes.array
+    repos: propTypes.observableArray
 };
 

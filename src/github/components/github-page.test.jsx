@@ -1,7 +1,8 @@
 import React from 'react';
+import {observable} from 'mobx';
+import {Provider} from 'mobx-react';
 import {shallow, mount} from 'enzyme';
 import GithubPage from './github-page';
-import {Provider} from 'mobx-react';
 
 describe('<GithubPage>', () => {
 
@@ -13,7 +14,7 @@ describe('<GithubPage>', () => {
                 github: {
                     orgName: '',
                     loading: false,
-                    repos: [],
+                    repos: observable([]),
                     error: null
                 }
             };
