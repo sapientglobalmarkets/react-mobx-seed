@@ -4,14 +4,17 @@ import {{properCase name}} from './{{dashCase name}}';
 import {Provider} from 'mobx-react';
 
 describe('<{{properCase name}} />', () => {
+
+    let store;
+
     beforeEach(() => {
-        this.store = {};
+        store = {};
     });
 
 
     it('should render correctly', () => {
         const dom = shallow(
-            <Provider store={this.store}>
+            <Provider store={store}>
                 <{{properCase name}} />
             </Provider>
         );
