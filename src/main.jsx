@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {browserHistory} from 'react-router';
+import {browserHistory, Router} from 'react-router';
+import {Provider} from 'mobx-react';
+
+// Routes
+import {routes} from './routes';
+
+// Stores
 import {store} from './store';
-import {App} from './app';
 
 // Styles
 import 'sanitize.css/sanitize.css';
 import './assets/styles/styles.css';
 
-ReactDOM.render(<App store={store} history={browserHistory}/>,
-    document.querySelector('main'));
+ReactDOM.render(
+    <Provider store={store}>
+        <Router history={browserHistory}>
+            {routes}
+        </Router>
+    </Provider>,
+    document.querySelector('main')
+);
