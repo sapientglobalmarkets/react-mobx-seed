@@ -1,15 +1,11 @@
 import {action, observable} from 'mobx';
 import {github} from './github.service';
 
-export class GithubStore {
+class GithubStore {
     @observable orgName = '';
     @observable loading = false;
     @observable repos = [];
     @observable error = null;
-
-
-    init() {
-    }
 
     @action
     setOrgName(name) {
@@ -34,3 +30,7 @@ export class GithubStore {
     }
 
 }
+
+let githubStore = new GithubStore();
+
+export default githubStore;

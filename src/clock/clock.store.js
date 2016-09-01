@@ -1,6 +1,6 @@
 import {computed, observable} from 'mobx';
 
-export class ClockStore {
+class ClockStore {
     intervalId = null;
     @observable date = new Date();
 
@@ -8,14 +8,13 @@ export class ClockStore {
         return ClockStore.format(this.date);
     }
 
-    init() {
+    constructor() {
         this.intervalId = setInterval(() => this.tick(), 1000);
     }
 
     tick() {
         this.date = new Date();
     }
-
 
     static format(date) {
         const yyyy = date.getFullYear(),
@@ -28,3 +27,7 @@ export class ClockStore {
         return `${mm}/${dd}/${yyyy} ${hh}:${m}:${s}`;
     }
 }
+
+let clockStore = new ClockStore();
+
+export default clockStore;

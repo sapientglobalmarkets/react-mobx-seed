@@ -5,7 +5,7 @@ import s from './github-page.css';
 import {OrgForm} from './org-form';
 import {RepoList} from './repo-list';
 
-@inject('store')
+@inject('githubStore')
 @observer
 export default class GithubPage extends React.Component {
 
@@ -16,8 +16,7 @@ export default class GithubPage extends React.Component {
     }
 
     render() {
-        const {github} = this.props.store;
-        const {error, loading, orgName, repos } = github;
+        const {error, loading, orgName, repos } = this.props.githubStore;
 
         return (
             <div className={s.githubPage}>
@@ -36,16 +35,14 @@ export default class GithubPage extends React.Component {
     }
 
     onChangeOrgName(event) {
-        const {github} = this.props.store;
-        github.setOrgName(event.target.value);
+        this.props.githubStore.setOrgName(event.target.value);
     }
 
     onShowRepos(event) {
         event.stopPropagation();
         event.preventDefault();
 
-        const {github} = this.props.store;
-        github.loadRepos();
+        this.props.githubStore.loadRepos();
     }
 
 }
