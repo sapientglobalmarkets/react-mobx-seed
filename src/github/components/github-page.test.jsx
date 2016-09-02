@@ -11,12 +11,10 @@ describe('<GithubPage>', () => {
     describe('with a default store', () => {
         beforeEach(() => {
             githubStore = {
-                github: {
-                    orgName: '',
-                    loading: false,
-                    repos: observable([]),
-                    error: null
-                }
+                orgName: '',
+                loading: false,
+                repos: observable([]),
+                error: null
             };
         });
 
@@ -47,7 +45,14 @@ describe('<GithubPage>', () => {
         let githubStore, dom, spy, stub;
 
         beforeEach(() => {
-            githubStore = require('../github.store');
+            githubStore = {
+                orgName: '',
+                loading: false,
+                repos: observable([]),
+                error: null,
+                setOrgName: ()=>{},
+                loadRepos: ()=>{}
+            };
 
             dom = mount(
                 <Provider githubStore={githubStore}>
@@ -73,7 +78,6 @@ describe('<GithubPage>', () => {
                 });
 
             expect(spy.calledWith('sapientglobalmarkets')).to.equal(true);
-            expect(githubStore.orgName).to.equal('sapientglobalmarkets');
         });
 
         // Use of stubs to avoid invoking original function/behavior
