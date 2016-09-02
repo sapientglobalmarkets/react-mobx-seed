@@ -6,7 +6,7 @@ module.exports = {
     prompts: [
         {
             type: 'input',
-            name: 'name',
+            name: 'featureName',
             message: 'What is your Feature\'s name?',
             validate: function (value) {
                 if ((/.+/).test(value)) {
@@ -18,33 +18,49 @@ module.exports = {
             default: 'MyFeature'
         },
         {
+            type: 'input',
+            name: 'componentName',
+            message: 'What is the name of your root Component?',
+            validate: function (value) {
+                if ((/.+/).test(value)) {
+                    return true;
+                }
+                return 'name is required';
+            },
+            default: 'MyComponent'
+        },
+        {
             type: 'list',
-            name: 'type',
+            name: 'componentType',
             message: 'What type of Component do you want?',
             choices: [
                 {name: 'Stateless Function', value: 'function'},
                 {name: 'Component Class', value: 'class'},
             ],
-            default: 'class'
+            default: 'function'
+        },
+        {
+            type: 'confirm',
+            name: 'observer',
+            message: 'Make it a MobX observer?',
+            default: false
         },
     ],
     actions: function (data) {
-        data.container = true;
-
         const actions = [
-            file.addFeatureIndex('../src/{{dashCase name}}/index.js'),
-            file.addStore('../src/{{dashCase name}}/{{dashCase name}}.store.js'),
-            file.addTest('../src/{{dashCase name}}/components/{{dashCase name}}.test.jsx'),
-            file.addCss('../src/{{dashCase name}}/components/{{dashCase name}}.css'),
+            file.addFeatureIndex('../src/{{dashCase featureName}}/index.js'),
+            file.addStore('../src/{{dashCase featureName}}/{{dashCase featureName}}.store.js'),
+            file.addTest('../src/{{dashCase featureName}}/components/{{dashCase componentName}}.test.jsx'),
+            file.addCss('../src/{{dashCase featureName}}/components/{{dashCase componentName}}.css'),
         ];
 
-        if (data.type === 'function') {
+        if (data.componentType === 'function') {
             actions.push(
-                file.addFunction('../src/{{dashCase name}}/components/{{dashCase name}}.jsx')
+                file.addFunction('../src/{{dashCase featureName}}/components/{{dashCase componentName}}.jsx')
             );
         } else {
             actions.push(
-                file.addClass('../src/{{dashCase name}}/components/{{dashCase name}}.jsx')
+                file.addClass('../src/{{dashCase featureName}}/components/{{dashCase componentName}}.jsx')
             );
         }
 

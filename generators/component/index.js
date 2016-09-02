@@ -6,7 +6,7 @@ module.exports = {
     prompts: [
         {
             type: 'input',
-            name: 'name',
+            name: 'componentName',
             message: 'What is your Component\'s name?',
             validate: function (value) {
                 if ((/.+/).test(value)) {
@@ -18,7 +18,7 @@ module.exports = {
         },
         {
             type: 'list',
-            name: 'type',
+            name: 'componentType',
             message: 'What type of Component do you want?',
             choices: [
                 {name: 'Stateless Function', value: 'function'},
@@ -28,8 +28,8 @@ module.exports = {
         },
         {
             type: 'confirm',
-            name: 'container',
-            message: 'Make it a Container component?',
+            name: 'observer',
+            message: 'Make it a MobX observer?',
             default: false
         },
         {
@@ -50,18 +50,18 @@ module.exports = {
     actions: function (data) {
 
         const actions = [
-            file.addIndex('../src/{{folder}}/{{dashCase name}}/index.js'),
-            file.addTest('../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.test.jsx'),
-            file.addCss('../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.css'),
+            file.addIndex('../src/{{folder}}/{{dashCase componentName}}/index.js'),
+            file.addTest('../src/{{folder}}/{{dashCase componentName}}/{{dashCase componentName}}.test.jsx'),
+            file.addCss('../src/{{folder}}/{{dashCase componentName}}/{{dashCase componentName}}.css'),
         ];
 
-        if (data.type === 'function') {
+        if (data.componentType === 'function') {
             actions.push(
-                file.addFunction('../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.jsx')
+                file.addFunction('../src/{{folder}}/{{dashCase componentName}}/{{dashCase componentName}}.jsx')
             );
         } else {
             actions.push(
-                file.addClass('../src/{{folder}}/{{dashCase name}}/{{dashCase name}}.jsx')
+                file.addClass('../src/{{folder}}/{{dashCase componentName}}/{{dashCase componentName}}.jsx')
             );
         }
 

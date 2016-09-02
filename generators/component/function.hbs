@@ -1,24 +1,24 @@
 import React from 'react';
-{{#if container}}
+{{#if observer}}
 import {observer, inject} from 'mobx-react';
 {{/if}}
 
-import style from './{{dashCase name}}.css';
+import style from './{{dashCase componentName}}.css';
 
-{{#if container}}
-export default inject('store')(observer(function {{ properCase name }}(props) {
+{{#if observer}}
+export default inject('store')(observer(function {{ properCase componentName }}() {
     return (
-        <div className={ style.{{camelCase name}} }>
-            <h2>{{ properCase name }}</h2>
+        <div className={ style.{{camelCase componentName}} }>
+            <h2>{{ properCase componentName }}</h2>
         </div>
     );
 }));
 
 {{else}}
-export default function {{ properCase name }}(props) {
+export default function {{ properCase componentName }}() {
     return (
-        <div className={ style.{{camelCase name}} }>
-            <h2>{{ properCase name }}</h2>
+        <div className={ style.{{camelCase componentName}} }>
+            <h2>{{ properCase componentName }}</h2>
         </div>
     );
 }
