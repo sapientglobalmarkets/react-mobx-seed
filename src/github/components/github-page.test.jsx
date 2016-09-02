@@ -50,8 +50,10 @@ describe('<GithubPage>', () => {
                 loading: false,
                 repos: observable([]),
                 error: null,
-                setOrgName: ()=>{},
-                loadRepos: ()=>{}
+                setOrgName: () => {
+                },
+                loadRepos: () => {
+                }
             };
 
             dom = mount(
