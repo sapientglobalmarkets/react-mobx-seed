@@ -15,7 +15,7 @@ module.exports = merge(webpackCommon, {
         ]
     },
 
-    devtool: 'cheap-module-source-map',
+    devtool: 'inline-source-map',
     devServer: {
         port: seedConfig.port,
         inline: true,

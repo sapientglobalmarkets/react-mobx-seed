@@ -1,10 +1,10 @@
-import {action, observable} from 'mobx';
+import {action, observable, asFlat} from 'mobx';
 import {github} from './github.service';
 
 class GithubStore {
     @observable orgName = '';
     @observable loading = false;
-    @observable repos = [];
+    @observable repos = asFlat([]);
     @observable error = null;
 
     @action
