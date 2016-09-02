@@ -6,11 +6,11 @@ import GithubPage from './github-page';
 
 describe('<GithubPage>', () => {
 
-    let store;
+    let githubStore;
 
     describe('with a default store', () => {
         beforeEach(() => {
-            store = {
+            githubStore = {
                 github: {
                     orgName: '',
                     loading: false,
@@ -22,7 +22,7 @@ describe('<GithubPage>', () => {
 
         it('should render correctly', () => {
             const dom = shallow(
-                <Provider store={store}>
+                <Provider githubStore={githubStore}>
                     <GithubPage/>
                 </Provider>
             );
@@ -31,7 +31,7 @@ describe('<GithubPage>', () => {
 
         it('should contain the necessary elements', () => {
             const dom = mount(
-                <Provider store={store}>
+                <Provider githubStore={githubStore}>
                     <GithubPage/>
                 </Provider>
             );
@@ -44,13 +44,13 @@ describe('<GithubPage>', () => {
     });
 
     describe('when <input> is given', () => {
-        let store, dom, spy, stub;
+        let githubStore, dom, spy, stub;
 
         beforeEach(() => {
-            store = require('../../store').store;
+            githubStore = require('../github.store');
 
             dom = mount(
-                <Provider store={store}>
+                <Provider githubStore={githubStore}>
                     <GithubPage/>
                 </Provider>
             );
@@ -63,7 +63,7 @@ describe('<GithubPage>', () => {
         // Use of Spies to also invoke original behavior
         it('should change "orgName" when <input> value is changed', () => {
 
-            spy = sinon.spy(store.github, 'setOrgName');
+            spy = sinon.spy(githubStore, 'setOrgName');
 
             dom.find('[data-element="orgInput"]')
                 .simulate('change', {
@@ -73,12 +73,12 @@ describe('<GithubPage>', () => {
                 });
 
             expect(spy.calledWith('sapientglobalmarkets')).to.equal(true);
-            expect(store.github.orgName).to.equal('sapientglobalmarkets');
+            expect(githubStore.orgName).to.equal('sapientglobalmarkets');
         });
 
         // Use of stubs to avoid invoking original function/behavior
         it('should call "loadRepos()" when the loadRepos <button> is clicked', () => {
-            stub = sinon.stub(store.github, 'loadRepos');
+            stub = sinon.stub(githubStore, 'loadRepos');
 
             dom.find('[data-element="orgInput"]')
                 .simulate('change', {
