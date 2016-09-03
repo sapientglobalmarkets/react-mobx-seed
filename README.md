@@ -1,6 +1,7 @@
 # react-mobx-seed
 
 [![Join the chat at https://gitter.im/sapientglobalmarkets/react-mobx-seed](https://badges.gitter.im/sapientglobalmarkets/react-mobx-seed.svg)](https://gitter.im/sapientglobalmarkets/react-mobx-seed?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Seed project for React + MobX
 
 
