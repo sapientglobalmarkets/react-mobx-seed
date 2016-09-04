@@ -1,11 +1,9 @@
 # react-mobx-seed
 
+[![Dependency Status](https://david-dm.org/sapientglobalmarkets/react-mobx-seed.svg)](https://david-dm.org/sapientglobalmarkets/react-mobx-seed)
 [![Join the chat at https://gitter.im/sapientglobalmarkets/react-mobx-seed](https://badges.gitter.im/sapientglobalmarkets/react-mobx-seed.svg)](https://gitter.im/sapientglobalmarkets/react-mobx-seed?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Seed project for React + MobX
-
-
-[![Dependency Status](https://david-dm.org/sapientglobalmarkets/react-mobx-seed.svg)](https://david-dm.org/sapientglobalmarkets/react-mobx-seed)
 
 ## Getting started
 Create your own project on Github or elsewhere. Then add a git-remote pointing to this repo. Let's name it `mobx-seed`. Merge into your own branch.
