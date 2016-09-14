@@ -1,7 +1,7 @@
 import React from 'react';
 import {observer} from 'mobx-react';
 
-import style from './org-form.css';
+import styles from './org-form.css';
 
 @observer(['githubStore'])
 export default class OrgForm extends React.Component {
@@ -11,16 +11,16 @@ export default class OrgForm extends React.Component {
 
         return (
             <div>
-                <form className={style.orgForm}>
+                <form className={styles.orgForm}>
                     <input
-                        className={`sdinput ${style.orgName}`}
+                        className={`sdinput ${styles.orgName}`}
                         data-element="orgInput"
                         placeholder="Organization Name (e.g. facebook)"
                         value={orgName}
                         onChange={event => this.onOrgNameChange(event)}
                     />
                     <button
-                        className={`sdbutton ${style.showRepos}`}
+                        className={`sdbutton ${styles.showRepos}`}
                         data-action="loadRepos"
                         onClick={event => this.onShowRepos(event)}>
                         Show Repos
@@ -29,7 +29,7 @@ export default class OrgForm extends React.Component {
 
                 <div>
                     {(loading) ? (<span>Loading...</span>) : null}
-                    {(!loading && error) ? (<span className={style.error}>{error.message}</span>) : null}
+                    {(!loading && error) ? (<span className={styles.error}>{error.message}</span>) : null}
                 </div>
             </div>
         );

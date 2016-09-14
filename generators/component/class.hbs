@@ -3,7 +3,7 @@ import React from 'react';
 import {observer, inject} from 'mobx-react';
 {{/if}}
 
-import style from './{{dashCase componentName}}.css';
+import styles from './{{dashCase componentName}}.css';
 
 {{#if observer}}
 @inject('store')
@@ -21,7 +21,7 @@ export default class {{ properCase componentName }} extends React.Component {
 
     render() {
         return (
-            <div className={ style.{{camelCase componentName}} }>
+            <div className={ styles.{{camelCase componentName}} }>
                 <h2>{{ properCase componentName }}</h2>
             </div>
         );

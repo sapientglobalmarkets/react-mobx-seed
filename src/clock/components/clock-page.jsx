@@ -1,7 +1,7 @@
 import React from 'react';
 import {observer} from 'mobx-react';
 
-import style from './clock-page.css';
+import styles from './clock-page.css';
 
 @observer(['clockStore'])
 export default class ClockPage extends React.Component {
@@ -10,7 +10,7 @@ export default class ClockPage extends React.Component {
         const {time} = this.props.clockStore;
 
         return (
-            <div className={style.clockPage}>
+            <div className={styles.clockPage}>
                 <span>The time is</span>
                 <h2>{time}</h2>
             </div>
