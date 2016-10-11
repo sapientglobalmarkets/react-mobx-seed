@@ -93,7 +93,9 @@ type Suit = "Diamonds" | "Clubs" | "Hearts" | "Spades";
 ```
 
 
-Since this typechecking is done through tcomb and babel, there is no need to add the `// @flow` pragma at the top of the file. Typechecking is done in development only. If you want to remove this functionality completely, delete the tcomb plugin in `.babelrc`
+Since this typechecking is done through tcomb and babel, there is no need to add the `// @flow` pragma at the top of the file. Typechecking is done in development only.
+
+If you want to remove this functionality completely, delete the tcomb plugin in `.babelrc`
 
 
 ## TODO
