@@ -8,7 +8,6 @@
         "transform-decorators-legacy",
         "transform-flow-strip-types"
     ],
-
     "env": {
         "development": {
             "plugins": [
