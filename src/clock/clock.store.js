@@ -16,7 +16,7 @@ class ClockStore {
         this.date = new Date();
     }
 
-    static format(date) {
+    static format(date: Date): string {
         const yyyy = date.getFullYear(),
             mm = date.getMonth() + 1,
             dd = date.getDate(),

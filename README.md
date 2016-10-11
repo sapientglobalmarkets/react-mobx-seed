@@ -29,6 +29,7 @@ And you are off to the races!
 
 - React
 - PostCSS (cssnext + precss + css-modules)
+- Optional static type-checking with either [Flow](https://flowtype.org) or [tcomb](https://github.com/gcanti/tcomb) type annotations
 
 #### State Management
 

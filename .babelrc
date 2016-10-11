@@ -10,9 +10,9 @@
     ],
 
     "env": {
-        "dev": {
+        "development": {
             "plugins": [
-                "react-hot-loader/babel"
+                "tcomb"
             ]
         },
         "test": {
