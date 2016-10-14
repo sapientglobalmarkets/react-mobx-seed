@@ -7,5 +7,6 @@ export default () => (
     <nav className={s.navbar}>
         <IndexLink to="/" activeClassName={s.active}>HOME</IndexLink>
         <Link to="/clock" activeClassName={s.active}>CLOCK</Link>
+        <Link to="/example-feature-page" activeClassName={s.active}>Example Feature</Link>
     </nav>
 );
